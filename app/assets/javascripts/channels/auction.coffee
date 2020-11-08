@@ -6,6 +6,7 @@ App.auction = App.cable.subscriptions.create "AuctionChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
+    $("#bids").html data['bid']
     # Called when there's incoming data on the websocket for this channel
 
   bidding:(bid) ->

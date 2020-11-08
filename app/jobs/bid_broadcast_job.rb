@@ -1,4 +1,6 @@
 class BidBroadcastJob < ApplicationJob
+  queue_as :default
+  
   def perform(bid)
     ActionCable.server.broadcast 'auction_channel', bid: render_bid(bid)
   end
