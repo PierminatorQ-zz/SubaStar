@@ -7,6 +7,7 @@ class AuctionChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def bidding
+  def bidding(data)
+    Bid.create! amount: data['bid'], auction_id: 1, user_id: current_user.id
   end
 end
