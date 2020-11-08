@@ -11,12 +11,18 @@ class AuctionsController < ApplicationController
   # GET /auctions/1
   # GET /auctions/1.json
   def show
+    @bid=Bid.where(auction_id: @auction.id).last
+    @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date, 1.second)
   end
 
   # GET /auctions/new
   def new
     @auction = Auction.new
     @products = Product.all
+  end
+
+  def timediff(x,y,method)
+    ((x - y)/ method).abs.to_i
   end
 
   # GET /auctions/1/edit
