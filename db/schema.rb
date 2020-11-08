@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_08_001924) do
+ActiveRecord::Schema.define(version: 2020_11_08_004247) do
+
+  create_table "auctions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "status"
+    t.integer "initial_price"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "user_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_auctions_on_product_id"
+    t.index ["user_id"], name: "index_auctions_on_user_id"
+  end
+
+  create_table "bids", force: :cascade do |t|
+    t.integer "amount"
+    t.integer "user_id"
+    t.integer "auction_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["auction_id"], name: "index_bids_on_auction_id"
+    t.index ["user_id"], name: "index_bids_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -45,6 +70,8 @@ ActiveRecord::Schema.define(version: 2020_11_08_001924) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.string "name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
