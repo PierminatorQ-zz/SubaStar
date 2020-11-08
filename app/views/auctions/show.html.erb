@@ -1,44 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @auction.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @auction.description %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @auction.status %>
-</p>
-
-<p>
-  <strong>Initial price:</strong>
-  <%= @auction.initial_price %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @auction.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @auction.end_date %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @auction.user %>
-</p>
-
-<p>
-  <strong>Product:</strong>
-  <%= @auction.product %>
-</p>
+<div class="card" style="width: 18rem;">
+  <img src="https://via.placeholder.com/200x150" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= @auction.title %></h5>
+    <p class="card-text"><%= @auction.description %></p>
+    <div class='timer' data-seconds-left=<%= @countdown_seconds %>>
+    </div>
+          
+    <div id="biddes">
+    <p>50</p>
+    <%#= render @bid %>
+    </div>
+    <form>
+    <label>EScribe tu puja</label>
+    <input type="text" data-behavior="auction_speaker">
+    </form>
+  
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_auction_path(@auction) %> |
 <%= link_to 'Back', auctions_path %>

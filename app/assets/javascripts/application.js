@@ -14,6 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
+//= require simpleTimer
+//= require displayTime
 //= require bootstrap/dist/js/bootstrap
 //= require popper.js/dist/popper
 //= require_tree .
