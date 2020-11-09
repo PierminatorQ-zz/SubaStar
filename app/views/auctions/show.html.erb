@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-  <img src="https://via.placeholder.com/200x150" class="card-img-top" alt="...">
+  <%= image_tag @auction.product.image.variant(resize:"200"), class:"card-img-top"%>
   <div class="card-body">
     <h5 class="card-title"><%= @auction.title %></h5>
     <p class="card-text"><%= @auction.description %></p>
