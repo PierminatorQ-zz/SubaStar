@@ -1,6 +1,5 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
-  before_action :check_disabled_auction, only: [:index, :show]
   before_action :winner_auction, only: [:index, :show]
 
   # GET /auctions
@@ -77,16 +76,17 @@ class AuctionsController < ApplicationController
 
   private
 
-    def check_disabled_auction
-      if @countdown_seconds == 0 && @last_bid.nil?
-        @auction.unpublish
-      end
-    end
+    
 
     def winner_auction
       if @countdown_seconds == 0 && @last_bid.present?
-        
+        @auction.winner_id = @last_bid.user_id
+        @auction.save
         @auction.won
+        redirect_to root_path
+      else
+        @auction.unpublish
+        redirect_to root_path
       end
     end
     
