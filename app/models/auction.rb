@@ -6,7 +6,7 @@ class Auction < ApplicationRecord
   #create states machines
   include AASM
 
-  aasm column: 'state' do
+  aasm column: 'status' do
     state :inactive
     state :active, initial: true
     state :completed

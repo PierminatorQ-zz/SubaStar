@@ -7,8 +7,11 @@
     </div>
           
     <div id="biddes">
-    
-    <%= render @bid %>
+    <% if @bid.nil?%>
+      <%=@auction.initial_price%>
+    <% else%>
+      <%= render @bid %>
+    <% end%>
     </div>
     <form>
       <label>EScribe tu puja</label>

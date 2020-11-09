@@ -1,5 +1,7 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
+  before_action :check_disabled_auction, only: [:index, :show]
+  before_action :winner_auction, only: [:index, :show]
 
   # GET /auctions
   # GET /auctions.json
@@ -11,14 +13,18 @@ class AuctionsController < ApplicationController
   # GET /auctions/1
   # GET /auctions/1.json
   def show
-    @bid=Bid.where(auction_id: @auction.id).last
+    @last_bid= Bid.where(auction_id: @auction.id).last
+    @bid=@last_bid
     @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date, 1.second)
   end
+
+
+   
 
   # GET /auctions/new
   def new
     @auction = Auction.new
-    @products = Product.all
+    @products = Product.where(user_id: current_user)
   end
 
   def timediff(x,y,method)
@@ -70,6 +76,22 @@ class AuctionsController < ApplicationController
   end
 
   private
+
+    def check_disabled_auction
+      if @countdown_seconds == 0 && @last_bid.nil?
+        @auction.unpublish
+      end
+    end
+
+    def winner_auction
+      if @countdown_seconds == 0 && @last_bid.present?
+        
+        @auction.won
+      end
+    end
+    
+    
+
     # Use callbacks to share common setup or constraints between actions.
     def set_auction
       @auction = Auction.find(params[:id])
