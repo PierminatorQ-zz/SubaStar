@@ -1,6 +1,6 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
-  before_action :winner_auction, only: [:index, :show]
+  #before_action :winner_auction, only: [:index]
 
   # GET /auctions
   # GET /auctions.json
@@ -12,9 +12,12 @@ class AuctionsController < ApplicationController
   # GET /auctions/1
   # GET /auctions/1.json
   def show
+    
+    @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date, 1.second)
     @last_bid= Bid.where(auction_id: @auction.id).last
     @bid=@last_bid
-    @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date, 1.second)
+    
+    
   end
 
 
@@ -79,15 +82,19 @@ class AuctionsController < ApplicationController
     
 
     def winner_auction
-      if @countdown_seconds == 0 && @last_bid.present?
+      
+      if @countdown_seconds == 0 
+        if @last_bid.present?
         @auction.winner_id = @last_bid.user_id
         @auction.save
         @auction.won
-        redirect_to root_path
-      else
+        redirect_to @auction
+        else
         @auction.unpublish
         redirect_to root_path
+        end
       end
+
     end
     
     

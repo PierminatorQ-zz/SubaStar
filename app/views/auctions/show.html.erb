@@ -3,8 +3,8 @@
   <div class="card-body">
     <h5 class="card-title"><%= @auction.title %></h5>
     <p class="card-text"><%= @auction.description %></p>
-    <div class='timer' data-seconds-left=<%= @countdown_seconds %>>
-    </div>
+    <div class='timer' data-seconds-left=<%= @countdown_seconds %>></div>
+   
           
     <div id="biddes">
     <% if @bid.nil?%>

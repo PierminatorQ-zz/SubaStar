@@ -12,8 +12,8 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery
+//= require turbolinks
 //= require simpleTimer
 //= require displayTime
 //= require bootstrap/dist/js/bootstrap
