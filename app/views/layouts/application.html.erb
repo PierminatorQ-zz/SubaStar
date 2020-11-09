@@ -4,13 +4,14 @@
     <title>SubaStar</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@300;500;700;900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container">
+     <%= render partial: 'shared/navbar' %>
+
       <p class="navbar-text float-right">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
@@ -21,7 +22,7 @@
         <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
       </p>
-
+    <div class="container">
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
       <% end %>

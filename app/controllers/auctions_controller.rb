@@ -21,8 +21,6 @@ class AuctionsController < ApplicationController
   end
 
 
-   
-
   # GET /auctions/new
   def new
     @auction = Auction.new
