@@ -32,7 +32,8 @@ class Auction < ApplicationRecord
 
   end
 
-
+  #scope show only actives
+  scope :only_active, ->(auction) { where(status: "active") }
 
 
 

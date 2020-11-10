@@ -18,3 +18,11 @@ $(document).on 'keypress', '[data-behavior~=auction_speaker]', (event) ->
     App.auction.bidding event.target.value
     event.target.value = ''
     event.preventDefault()
+
+
+    ### $(document).on 'keypress', '[data-behavior~=auction_speaker]', (event) ->
+  
+  if event.keyCode is 13
+    App.auction.bidding event.target.value
+    event.target.value = ''
+    event.preventDefault() ###

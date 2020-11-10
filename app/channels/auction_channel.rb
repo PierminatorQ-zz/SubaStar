@@ -9,7 +9,7 @@ class AuctionChannel < ApplicationCable::Channel
   end
 
   def bidding(data)
-    Bid.create! amount: data['bid'], auction_id: 2, user_id: current_user.id
+    Bid.create! amount: data['bid'], auction_id: 3, user_id: current_user.id
     if @countdown_seconds <= 30
       @countdown_seconds = @countdown_seconds + 30
     end
