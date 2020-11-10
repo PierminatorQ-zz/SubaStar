@@ -1,12 +1,12 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
-   after_action :blank_auction, only: [:index, :new, :update]
+  after_action :blank_auction, only: [:index]
   #before_action :winner_auction, only: [:index]
 
   # GET /auctions
   # GET /auctions.json
   def index
-    @auctions = Auction.only_active(@auction)
+    @auctions = Auction.only_active(@auction).auction_by(current_user)
   end
 
   # GET /auctions/1
