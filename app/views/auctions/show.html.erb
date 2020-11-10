@@ -1,3 +1,6 @@
+
+
+
 <div class="card" style="width: 18rem;">
   <%= image_tag @auction.product.image.variant(resize:"200"), class:"card-img-top"%>
   <div class="card-body">
@@ -15,7 +18,7 @@
     </div>
     <form>
       <label>Escribe tu puja</label>
-      <input type="text" data-behavior="auction_speaker" >
+      <input type="text" data-behavior="auction_speaker", placeholder="<%= @auction.initial_price + 50 %>">
       
     </form>
   

@@ -1,0 +1,22 @@
+@import 'auctions';
+
+#notice_wrapper {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  .alert { background: rgba(255,45,99,0.6); }
+  .notice{ background: rgba(88,0,214,0.6); }
+  .alert, .notice {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300;
+    font-family: $raleway;
+    letter-spacing: 1px;
+    margin: 0;    
+    padding: 25px 0;
+    text-align: center;  
+    text-shadow: $shadowBox;
+  }
+}

@@ -14,7 +14,8 @@ class AuctionsController < ApplicationController
   def show
     
     @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date, 1.second)
-    @bid= Bid.where(auction_id: @auction.id).last
+    @bid_last= Bid.where(auction_id: @auction.id).last
+    @bid=@bid_last
     
   
   end
@@ -32,6 +33,7 @@ class AuctionsController < ApplicationController
 
   # GET /auctions/1/edit
   def edit
+    @products = Product.where(user_id: current_user)
   end
 
   # POST /auctions
