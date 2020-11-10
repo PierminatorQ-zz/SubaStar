@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root to: "auctions#index"
+  get 'home/index'
+  root to: "home#index"
   resources :bids
   resources :auctions
   resources :products
