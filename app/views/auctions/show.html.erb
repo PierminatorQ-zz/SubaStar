@@ -7,6 +7,7 @@
     <h5 class="card-title"><%= @auction.title %></h5>
     <p class="card-text"><%= @auction.description %></p>
     <div class='timer' data-seconds-left=<%= @countdown_seconds %>></div>
+    
    
           
     <div id="biddes">
@@ -18,7 +19,7 @@
     </div>
     <form>
       <label>Escribe tu puja</label>
-      <input type="text" data-behavior="auction_speaker", placeholder="<%= @auction.initial_price + 50 %>">
+      <input type="text" data-behavior="auction_speaker" data-auction="<%= @auction.id %>" placeholder="<%= @auction.initial_price + 50 %>">
       
     </form>
   

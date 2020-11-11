@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.auction_by(current_user)
+    @products = Product.filtered_by_user(current_user)
   end
 
   # GET /products/1

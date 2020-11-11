@@ -1,0 +1,31 @@
+$electric: #5800d6;
+$cyan:#00ccff;
+$blackText:#200041;
+$whiteBg:#f7f9ff;
+$grayDark:#a0a1aa;
+$grayLight:#f5f5f5;
+$blueLight:#e8ebfe;
+//variants
+$green:#00c47b;
+$purple:#8900ee;
+$pink:#ff2d63;
+//shadow
+$shadowBox: -2px 2px 6px 0px rgba(0,0,0,0.07);
+
+//font raleway weight 300,500,700,900
+//font open weight 300, 400
+
+//fuentes
+$open: 'Open Sans', sans-serif;
+$raleway: 'Raleway', sans-serif;
+
+
+html {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.form-control:focus{
+  border-color:$electric;
+}

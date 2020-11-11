@@ -6,18 +6,19 @@ App.auction = App.cable.subscriptions.create "AuctionChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $("#bids").html data['bid']
+    $("#biddes").html data['bid']
     # Called when there's incoming data on the websocket for this channel
 
-  bidding:(bid) ->
-    @perform 'bidding', bid: bid
+  bidding:(bid, auction_id) ->
+    @perform 'bidding', {bid: bid, auction_id: auction_id}
 
 $(document).on 'keypress', '[data-behavior~=auction_speaker]', (event) ->
   
   if event.keyCode is 13
-    App.auction.bidding event.target.value
+    auction_id=this.attributes["data-auction"].value
+    App.auction.bidding event.target.value, auction_id
     event.target.value = ''
-    event.preventDefault()
+    event.preventDefault() 
 
 
     ### $(document).on 'keypress', '[data-behavior~=auction_speaker]', (event) ->

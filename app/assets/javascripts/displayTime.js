@@ -1,5 +1,5 @@
 
 
-$( document ).ready(function() {
+document.addEventListener('turbolinks:load', function(){ 
   $('.timer').startTimer();
 });

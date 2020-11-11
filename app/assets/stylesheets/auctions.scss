@@ -2,33 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //colores
-$electric: #5800d6;
-$cyan:#00ccff;
-$blackText:#200041;
-$whiteBg:#f7f9ff;
-$grayDark:#a0a1aa;
-$grayLight:#f5f5f5;
-$blueLight:#e8ebfe;
-//variants
-$green:#00c47b;
-$purple:#8900ee;
-$pink:#ff2d63;
-//shadow
-$shadowBox: -2px 2px 6px 0px rgba(0,0,0,0.07);
-
-//font raleway weight 300,500,700,900
-//font open weight 300, 400
-
-//fuentes
-$open: 'Open Sans', sans-serif;
-$raleway: 'Raleway', sans-serif;
-
-
-html {
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
+@import 'variables';
 
 body {
   background-color: $whiteBg;
@@ -92,13 +66,16 @@ h1,h2,h3,h4,h5 {
   margin: 20px 20px 20px 20px;
 
   .text-secondary{
-    font-size:0.8em;
+    font-size:0.9em;
     font-family: $open;
     
   }
   .price{
     font-weight: 900;
     color:$electric !important;
+  }
+  .text-muted{
+    font-size:0.8em;
   }
 
 }
@@ -169,3 +146,4 @@ h1,h2,h3,h4,h5 {
     color:white;
   }
 }
+

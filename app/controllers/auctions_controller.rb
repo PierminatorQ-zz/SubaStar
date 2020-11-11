@@ -6,7 +6,8 @@ class AuctionsController < ApplicationController
   # GET /auctions
   # GET /auctions.json
   def index
-    @auctions = Auction.only_active(@auction).auction_by(current_user)
+    @auctions = Auction.only_active(@auction).filtered_by_user(current_user)
+    
   end
 
   # GET /auctions/1

@@ -31,3 +31,19 @@
 
 en:
   hello: "Hello world"
+
+  datetime:
+    distance_in_words:
+      short:
+        about_x_hours:
+          one: 'una hora'
+          other: '%{count} horas'
+        x_days:
+          one: 1 dia
+          other: "%{count} dias"
+        less_than_x_seconds:
+          one: menos de un segundo
+          other: menos de %{count} segundos
+        less_than_x_minutes:
+          one: menos de un minuto
+          other: menos de %{count} minutos
