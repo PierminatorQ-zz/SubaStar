@@ -39,12 +39,19 @@
                       <div class="row px-3 mb-3">
                           <p class="text-muted mb-0">+ $<%= auction.product.delivery_cost %> costos de envìo</p>
                       </div>
-                      <div class="btn-group float-right my-3" role="group">
+                      <div class="d-flex justify-content-between align-items-center mx-1">
+                        <div class="d-flex flex-column justify-content-center align-items-center mx-1">
+                            <span class="time-words"><%=distance_of_time_in_words(Time.now,auction.end_date, include_seconds: true, scope: 'datetime.distance_in_words.short')%></span>
+                            <p class="mb-0 text-center plus">tiempo restante</p>
+                        </div>
+                        <div class="btn-group float-right my-3" role="group">
                         <%= link_to 'Show', auction, class:"btn btn-outline-secondary btn-grupo", type:"button" %>
                         <%= link_to 'Edit', edit_auction_path(auction), class:"btn btn-outline-secondary btn-grupo", type:"button" %>
                         <%= link_to 'Destroy', auction, method: :delete, class:"btn btn-outline-secondary btn-grupo", type:"button", data: { confirm: 'Are you sure?' } %>
                         
                       </div>
+                      </div>
+                      
                       
                       
                           
