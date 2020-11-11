@@ -7,8 +7,11 @@ class AuctionsController < ApplicationController
   # GET /auctions
   # GET /auctions.json
   def index
-    @auctions = Auction.only_active(@auction).filtered_by_user(current_user)
-    
+    if( params[:search] && !params[:search].empty? )
+      @auctions = Auction.where("title LIKE ?", "%#{params[:search]}%").order(created_at: :desc)  
+    else
+      @auctions = Auction.only_active(@auction).filtered_by_user(current_user).order(created_at: :desc)
+    end
   end
 
   # GET /auctions/1
@@ -94,14 +97,14 @@ class AuctionsController < ApplicationController
       
       if @countdown_seconds == 0 
         if @last_bid.present?
-        @auction.winner_id = @last_bid.user_id
-        @auction.won
-        @auction.save
-        redirect_to @auction
+          @auction.winner_id = @last_bid.user_id
+          @auction.won
+          @auction.save
+          redirect_to @auction
         else
-        @auction.unpublish
-        @auction.save
-        redirect_to root_path
+          @auction.unpublish
+          @auction.save
+          redirect_to root_path
         end
       end
 
