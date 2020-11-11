@@ -2,6 +2,7 @@ class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
   after_action :blank_auction, only: [:index]
   before_action :winner_auction, only: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /auctions
   # GET /auctions.json
