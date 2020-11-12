@@ -1,8 +1,9 @@
 class AuctionsController < ApplicationController
-  before_action :set_auction, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
+  before_action :set_auction, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :toggle_status]
   after_action :blank_auction, only: [:index]
   before_action :winner_auction, only: [:index, :show]
-  before_action :authenticate_user!, except: [:index]
+  
 
   # GET /auctions
   # GET /auctions.json
@@ -10,7 +11,7 @@ class AuctionsController < ApplicationController
     if( params[:search] && !params[:search].empty? )
       @auctions = Auction.where("title LIKE ?", "%#{params[:search]}%").order(created_at: :desc)  
     else
-      @auctions = Auction.only_active(@auction).filtered_by_user(current_user).order(created_at: :desc)
+      @auctions = Auction.filtered_by_user(current_user).order(created_at: :desc)
     end
   end
 
@@ -21,10 +22,29 @@ class AuctionsController < ApplicationController
     @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date, 1.second)
     @bid_last= Bid.where(auction_id: @auction.id).last
     @bid=@bid_last
-    
   
   end
 
+  #uplike from user
+  def upvote
+      @auction.upvote_from current_user
+      redirect_to root_path
+  end
+    
+  #downlike form user
+  def downvote
+    @auction.downvote_from current_user
+      redirect_to root_path
+  end
+  
+  def toggle_status
+    if @auction.active?
+      @auction.unpublish!
+    else
+      @auction.publish!
+    end
+    redirect_to auctions_url, notice: 'El Estado ha sido actualizado.'
+  end
 
   # GET /auctions/new
   def new
@@ -38,6 +58,7 @@ class AuctionsController < ApplicationController
 
   # GET /auctions/1/edit
   def edit
+    @auction = Auction.find(params[:id])
     @products = Product.where(user_id: current_user)
   end
 
@@ -60,6 +81,7 @@ class AuctionsController < ApplicationController
   # PATCH/PUT /auctions/1
   # PATCH/PUT /auctions/1.json
   def update
+    
     respond_to do |format|
       if @auction.update(auction_params)
         format.html { redirect_to @auction, notice: 'Auction was successfully updated.' }
@@ -85,9 +107,9 @@ class AuctionsController < ApplicationController
 
     def blank_auction
       @auctions.each do |f|
-        if f.end_date < DateTime.now.in_time_zone
+        if f.end_date < DateTime.now.in_time_zone && f.active?
           f.unpublish! 
-        end
+          end
       end
     end
   

@@ -1,0 +1,20 @@
+@mixin status($color){
+  color:$color;
+  font-weight: 700;
+  text-transform: uppercase;
+
+    &:hover{
+      color:$electric;
+      text-decoration: none;
+    }
+}
+
+@mixin tag_category($color){
+  background-color: $color;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px
+    
+}
+

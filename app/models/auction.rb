@@ -3,6 +3,9 @@ class Auction < ApplicationRecord
   belongs_to :product
   has_many :bids
 
+  #votable feature
+  acts_as_votable
+  
   #create states machines
   include AASM
 

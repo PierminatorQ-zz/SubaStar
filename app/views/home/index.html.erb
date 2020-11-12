@@ -7,15 +7,28 @@
   <div class="col-sm-12 col-md-6">
     <div class="row d-flex justify-content-center">
       <div class="card border-0">
-              <div class="row set-p justify-content-center">
+              <div class="row set-p justify-content-center ">
                   <div class="col-sm-4 px-0"> <%= image_tag auction.product.image, class:"image" %> </div>
                   <div class="col-sm-8">
-                      <div class="row px-3 mt-4 mb-3">
-                          <p class="rating mb-0 px-2 mr-3 <%=auction.product.category.color%> "><strong><%=auction.product.category.name%></strong></p>
-                          <p class="text-primary mb-0 mr-2 grade"><strong><%=auction.bids.count%> pujas</strong></p>
-                          <p class="text-secondary mb-0 mr-2">&middot;</p>
-                          <div class="row ml-auto mr-3 "> <span class="mr-1"><i class="lni lni-lg lni-heart unlike"></i></span></div>
+                      <div class="row px-3 mt-4 mb-3 upinfo d-flex">
+
+                          <p class="rating mb-0 px-2 mr-3 my-auto <%=auction.product.category.color%> d-flex justify-content-center align-items-center"><strong><%=auction.product.category.name%></strong></p>
+                          <p class="text-primary mb-0 mr-2 grade my-auto"><strong><%=auction.bids.count%> pujas</strong></p>
+                          
+                          <div class="ml-auto mr-3 d-flex justify-content-center align-items-center "> 
+                                <% if auction.get_upvotes.size <= 0 %>
+                                    <%= link_to like_auction_path(auction), class:"like", method: :put do %>
+                                        <span class="mr-1"><i class="lni lni-lg lni-heart unlike"></i></span>
+                                    <%end%>
+                                <%else%>
+                                    <%= link_to unlike_auction_path(auction), class:"like", method: :put do %>
+                                        <span class="mr-1"><i class="lni  lni-lg lni-heart-filled like"></i></i></span>
+                                    <%end%>
+                                <%end%>
+                            <p class="text-secondary creator mb-1"><%=auction.get_upvotes.size %></p>
+                          </div>
                       </div>
+                    
                       <div class="row px-3 d-flex flex-column">
                           <h3 class="font-weight-bold title"><%= auction.title %></h3>
                           <p class="text-secondary creator mb-4">creado por <%=auction.user.name %></p>

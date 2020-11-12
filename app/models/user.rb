@@ -7,4 +7,7 @@ class User < ApplicationRecord
          has_many :products
          has_many :auctions
          has_many :bids
+
+
+  acts_as_voter
 end

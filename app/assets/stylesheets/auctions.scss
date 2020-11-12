@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //colores
 @import 'variables';
+@import 'mixins';
 
 body {
   background-color: $whiteBg;
@@ -77,6 +78,10 @@ h1,h2,h3,h4,h5 {
   .text-muted{
     font-size:0.8em;
   }
+  .rating{
+    height: 30px;
+
+  }
 
 }
 
@@ -94,19 +99,11 @@ h1,h2,h3,h4,h5 {
 }
 
 .verde {
-  background-color: $cyan;
-  color: #fff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px
+  @include tag_category($cyan)
 }
 
 .rosa {
-  background-color: $pink;
-  color: #fff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px
+ @include tag_category($pink);
 }
 
 .grade {
@@ -159,4 +156,23 @@ h1,h2,h3,h4,h5 {
 .time-words{
   color:$electric;
   font-weight:700;
+}
+
+.unlike{
+  color:$grayDark;
+}
+
+.like{
+  color:$pink;
+}
+.upinfo{
+  display:flex;
+}
+
+
+.active{
+  @include status($green);
+}
+.inactive{
+  @include status($pink);
 }

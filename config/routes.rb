@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   get 'home/index'
   root to: "home#index"
   resources :bids
-  resources :auctions
+  resources :auctions do
+    member do
+      put "like" => "auctions#upvote"
+      put "unlike" => "auctions#downvote"
+      get :toggle_status
+    end
+  end
   resources :products
   devise_for :users
   resources :categories
