@@ -38,6 +38,12 @@ en:
         about_x_hours:
           one: 'una hora'
           other: '%{count} horas'
+        x_minutes:
+          one: 1 minuto
+          other: "%{count} minutos"
+        x_seconds:
+          one: 1 segundo
+          other: "%{count} segundos"
         x_days:
           one: 1 dia
           other: "%{count} dias"
