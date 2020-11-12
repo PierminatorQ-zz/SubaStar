@@ -14,12 +14,13 @@
                           <p class="rating mb-0 px-2 mr-3 <%=auction.product.category.color%> "><strong><%=auction.product.category.name%></strong></p>
                           <p class="text-primary mb-0 mr-2 grade"><strong><%=auction.bids.count%> pujas</strong></p>
                           <p class="text-secondary mb-0 mr-2">&middot;</p>
-                          <p class="text-secondary mb-0 ml-auto">creado por <%=auction.product.user.name %></p>
+                          <div class="row ml-auto mr-3 "> <span class="mr-1"><i class="lni lni-lg lni-heart unlike"></i></span></div>
                       </div>
-                      <div class="row px-3">
+                      <div class="row px-3 d-flex flex-column">
                           <h3 class="font-weight-bold title"><%= auction.title %></h3>
+                          <p class="text-secondary creator mb-4">creado por <%=auction.user.name %></p>
                       </div>
-                      <div class="row px-3 mb-2 mt-2"> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> <span class="fa fa-star text-warning mr-1"></span> </div>
+                      
                       <div class="row px-3">
                           <h5 class="mb-1 description"><%= auction.description %> &nbsp; &vert;&nbsp; Artista: &middot;<%= auction.product.author %></h5>
                       </div>
