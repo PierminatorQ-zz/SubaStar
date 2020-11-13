@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SubaStar</title>
+    <title>Dashboard - Subastar</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+  
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:wght@300;500;700;900&display=swap" rel="stylesheet">   
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,16 +13,23 @@
   </head>
 
   <body>
-     <%= render partial: 'shared/navbar' %>
+     <%= render partial: 'shared/navdashboard' %>
 
+    <div id="notice_wrapper">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+    </div> 
     
-    
-  <div class="container">
+  
       <%= yield %>
-      <%= toastr_flash %>
-  </div>
   
-  
+    
+
+
+
 
   </body>
 </html>

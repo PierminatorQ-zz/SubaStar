@@ -30,6 +30,7 @@ gem 'devise'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 gem 'acts_as_votable'
+gem 'toastr-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

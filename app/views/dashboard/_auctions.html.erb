@@ -1,0 +1,31 @@
+<div class="auctions-dash">
+        <h4 class="my-4 ml-5 title-content">Subastas</h4>
+          <table class="table table-bordered rounded-lg">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio Inicial</th>
+                <th scope="col">Pujas</th>
+                <th scope="col">Producto</th>
+                <th scope="col">likes</th>
+                <th scope="col">Tiempo restante</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Creador</th>
+              </tr>
+            </thead>
+            <tbody>
+            <%@auctions.each do |auction|%>
+              <tr>
+                <th><%= auction.title%></th>
+                <td>$<%= auction.initial_price%></td>
+                <td><%= auction.bids.count%></td>
+                <td><%= auction.product.title%></td>
+                <td><%= auction.get_upvotes.size%></td>
+                <td><%= distance_of_time_in_words(Time.now,auction.end_date, include_seconds: true, scope: 'datetime.distance_in_words.short')%></td>
+                <td><%= auction.status%></td>
+                <td><%= auction.user.name%></td>
+              </tr>
+            <%end%>
+            </tbody>
+          </table>
+        </div>

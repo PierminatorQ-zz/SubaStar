@@ -1,5 +1,6 @@
 
 
+
 document.addEventListener('turbolinks:load', function(){ 
   $('.timer').startTimer();
 
@@ -7,4 +8,8 @@ document.addEventListener('turbolinks:load', function(){
   $('#search').val('')
 
 
+ 
+
+
 });
+

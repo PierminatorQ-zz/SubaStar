@@ -16,7 +16,8 @@
 //= require turbolinks
 //= require simpleTimer
 //= require displayTime
-//= require notice
+//= require toastr
+//= require bootstrap-notify.js
 //= require bootstrap/dist/js/bootstrap
 //= require popper.js/dist/popper
 //= require_tree .

@@ -1,0 +1,30 @@
+<div class="auctions-dash">
+        <h4 class="my-4 ml-5 title-content">Usuarios</h4>
+          <table class="table table-bordered rounded-lg text-center">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Productos</th>
+                <th scope="col">Subastas</th>
+                <th scope="col">Pujas</th>
+                <th scope="col">Dinero Pujado</th>
+                <th scope="col">Subastas Ganadas</th>
+              </tr>
+            </thead>
+            <tbody>
+            <%@users.each do |user|%>
+              <tr>
+                <th><%= user.name%></th>
+                <td><%= user.email%></td>
+                <td><%= user.products.count%></td>
+                <td><%= user.auctions.count%></td>
+                <td><%= user.bids.count%></td>
+                <td>$<%= dinero_pujado(user)%></td>
+                <td><%= pujas_ganadas(user)%></td>
+                                
+              </tr>
+            <%end%>
+            </tbody>
+          </table>
+        </div>

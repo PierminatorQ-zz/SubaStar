@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'dashboard', to:'dashboard#index'
   get 'home/index'
   root to: "home#index"
   resources :bids
+
   resources :auctions do
     member do
       put "like" => "auctions#upvote"
