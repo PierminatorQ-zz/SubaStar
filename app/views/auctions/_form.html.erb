@@ -11,39 +11,39 @@
     </div>
   <% end %>
   
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :initial_price %>
-    <%= form.number_field :initial_price %>
+    <%= form.number_field :initial_price, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :start_date %>
-    <%= form.datetime_local_field :start_date %>
+    <%= form.datetime_local_field :start_date, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :end_date %>
-    <%= form.datetime_local_field :end_date %>
+    <%= form.datetime_local_field :end_date, class:"form-control" %>
   </div>
 
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :product_id %>
-    <%= form.collection_select :product_id, @products, :id, :title %>
+    <%= form.collection_select :product_id, @products, :id, :title,{prompt: "Selecciona una categoria"},{ class:"form-control"} %>
     
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-form"%>
   </div>
 <% end %>

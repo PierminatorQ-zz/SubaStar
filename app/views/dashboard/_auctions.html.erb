@@ -11,6 +11,7 @@
                 <th scope="col">Tiempo restante</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Creador</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -24,6 +25,14 @@
                 <td><%= distance_of_time_in_words(Time.now,auction.end_date, include_seconds: true, scope: 'datetime.distance_in_words.short')%></td>
                 <td><%= auction.status%></td>
                 <td><%= auction.user.name%></td>
+                <td>
+                      <div class="btn-group float-right my-3" role="group">
+                        <%= link_to 'Show', auction, class:"btn btn-outline-secondary btn-grupo", type:"button" %>
+                        <%= link_to 'Edit', edit_auction_path(auction), class:"btn btn-outline-secondary btn-grupo", type:"button" %>
+                        <%= link_to 'Destroy', auction, method: :delete, class:"btn btn-outline-secondary btn-grupo", type:"button", data: { confirm: 'Are you sure?' } %>
+                        
+                      </div>
+                </td>
               </tr>
             <%end%>
             </tbody>
