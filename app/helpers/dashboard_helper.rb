@@ -5,6 +5,11 @@ module DashboardHelper
   end
 
   def pujas_ganadas(user)
-    win=Bid.where(user_id: user.id).last.auction.title
+    win=Auction.where(winner_id: user.id).count
   end
+
+  def find_auction(id)
+    auction=Auction.find(id)
+  end
+
 end

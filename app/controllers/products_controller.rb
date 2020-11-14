@@ -5,7 +5,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    if current_user.admin?
+      @products = Product.all
+    else
     @products = Product.filtered_by_user(current_user)
+    end
   end
 
   # GET /products/1

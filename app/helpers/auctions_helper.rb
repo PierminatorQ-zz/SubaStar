@@ -23,9 +23,6 @@ module AuctionsHelper
 
 
 
-  def winner auction
-    winner = Bid.where(auction_id: auction.id).last
-    winner.user.name
-  end
+  
   
 end

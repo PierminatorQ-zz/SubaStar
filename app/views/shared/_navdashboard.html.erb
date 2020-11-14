@@ -21,9 +21,20 @@
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
         </li>
         <li class="nav-item">
+          <%= link_to "Mi perfil", perfil_path, :class => 'nav-link'  %>
+        </li>
+         <li class="nav-item">
+          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'nav-link' %> 
+        
+        </li>
+        <li class="nav-item">
+          <%= link_to "Dashboard", dashboard_path, :class => 'nav-link'  %>
+          </li>
+        <li class="nav-item">
           <span class="nav-link">Bienvenido <strong><%= current_user.name %></strong>.</span>
         
         </li>
+
       <% else %>
         <li class="nav-item">
           <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %> 

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'dashboard', to:'dashboard#index'
+  get 'perfil', to:'dashboard#perfil'
   get 'home/index'
   root to: "home#index"
   resources :bids

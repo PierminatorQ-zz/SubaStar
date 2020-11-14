@@ -11,7 +11,11 @@ class AuctionsController < ApplicationController
     if( params[:search] && !params[:search].empty? )
       @auctions = Auction.where("title LIKE ?", "%#{params[:search]}%").order(created_at: :desc)  
     else
-      @auctions = Auction.filtered_by_user(current_user).order(created_at: :desc)
+      if current_user.admin?
+        @auctions=Auction.all.order(created_at: :desc)
+      else
+        @auctions = Auction.filtered_by_user(current_user).order(created_at: :desc)
+      end
     end
     
   end

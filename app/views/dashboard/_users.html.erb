@@ -10,6 +10,7 @@
                 <th scope="col">Pujas</th>
                 <th scope="col">Dinero Pujado</th>
                 <th scope="col">Subastas Ganadas</th>
+                <th scope="col">Admin</th>
               </tr>
             </thead>
             <tbody>
@@ -22,7 +23,7 @@
                 <td><%= user.bids.count%></td>
                 <td>$<%= dinero_pujado(user)%></td>
                 <td><%= pujas_ganadas(user)%></td>
-                                
+                <td><%= user.admin%></td>           
               </tr>
             <%end%>
             </tbody>
