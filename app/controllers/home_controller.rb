@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :blank_auction
   def index
     
     if( params[:search] && !params[:search].empty? )

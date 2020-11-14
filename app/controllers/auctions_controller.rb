@@ -2,7 +2,7 @@ class AuctionsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_auction, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :toggle_status]
   after_action :blank_auction, only: [:index]
-  before_action :winner_auction, only: [:index, :show]
+  
   
 
   # GET /auctions
@@ -13,13 +13,14 @@ class AuctionsController < ApplicationController
     else
       @auctions = Auction.filtered_by_user(current_user).order(created_at: :desc)
     end
+    
   end
 
   # GET /auctions/1
   # GET /auctions/1.json
   def show
     
-    @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date, 1.second)
+    @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date.in_time_zone, 1.second)
     @bid_last= Bid.where(auction_id: @auction.id).last
     @bid=@bid_last
   
@@ -105,34 +106,8 @@ class AuctionsController < ApplicationController
 
   private
 
-    def blank_auction
-      @auctions.each do |f|
-        if f.end_date < DateTime.now.in_time_zone && f.active?
-          f.unpublish! 
-          end
-      end
-    end
-  
-    
 
-    def winner_auction
-      
-      if @countdown_seconds == 0 
-        if @last_bid.present?
-          @auction.winner_id = @last_bid.user_id
-          @auction.won
-          @auction.save
-          redirect_to @auction
-        else
-          @auction.unpublish
-          @auction.save
-          redirect_to root_path
-        end
-      end
-
-    end
-    
-    
+        
 
     # Use callbacks to share common setup or constraints between actions.
     def set_auction

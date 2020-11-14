@@ -177,6 +177,14 @@ h1,h2,h3,h4,h5 {
   @include status($pink);
 }
 
+.completed{
+  @include status($cyan);
+}
+
+.deserted{
+  @include status($grayDark);
+}
+
 .navbarBg{
   background-color: $electric;
   border-radius: 0 ;

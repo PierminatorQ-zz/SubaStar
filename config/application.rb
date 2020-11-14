@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module SubaStar
   class Application < Rails::Application
+    config.time_zone = "America/Santiago"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
