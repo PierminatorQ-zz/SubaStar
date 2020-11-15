@@ -7,6 +7,13 @@ class DashboardController < ApplicationController
     @auctions= Auction.all
     @products=Product.all
     @users=User.all
+    @auctions_by_user = Auction.all
+                        .group(:status).count
+    
+    @money_average =Auction.where(winner_id:current_user.id)
+                    .group(:initial_price)
+                    .count
+    
     
   end
 

@@ -14,6 +14,8 @@
 //= require activestorage
 //= require jquery
 //= require turbolinks
+//= require highcharts
+//= require chartkick
 //= require simpleTimer
 //= require displayTime
 //= require toastr

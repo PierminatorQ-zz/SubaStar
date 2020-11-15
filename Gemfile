@@ -31,6 +31,7 @@ gem 'devise'
 gem 'mini_magick', '~> 4.8'
 gem 'acts_as_votable'
 gem 'toastr-rails'
+gem 'chartkick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
