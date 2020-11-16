@@ -1,91 +1,111 @@
 
-
-
 <div class="container">
-  <div class="row">
-  <% @auctions.each do |auction| %>
-  <div class="col-sm-12 col-md-6">
-    <div class="row d-flex justify-content-center">
-      <div class="card border-0">
-              <div class="row set-p justify-content-center ">
-                  <div class="col-sm-4 px-0"> <%= image_tag auction.product.image, class:"image" %> </div>
-                  <div class="col-sm-8">
-                      <div class="row px-3 mt-4 mb-3 upinfo d-flex">
+  <div class="row header">
+  <div class="col-sm-12 col-md-8 d-flex justify-content-center flex-column text-right">
+    <h1 class="title-header"> Gana Obras de Arte</h1>
+    <h5 class="subtitle-header mt-2"><i class="lni lni-arrow-right"></i> desde tu sillòn</h5>
+   
+    <p class="tagline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quam expedita hic cupiditate accusantium saepe?</p>
+  </div>
+  <div class="col-sm-12 col-md-4 d-flex justify-content-center">
+    <%= image_tag 'escultura-hero', class:"img-hero img-fluid" %>
+  </div>
+  </div>
+  <div class="row cta">
+      <%= link_to 'Quiero Ganar Subastas', root_path, class:"col-sm-6  cta-left text-center" %>
+   
+    <%= link_to 'Quiero Subastar un producto', auctions_path, class:"col-sm-6  cta-right text-center" %>
 
-                          <p class="rating mb-0 px-2 mr-3 my-auto <%=auction.product.category.color%> d-flex justify-content-center align-items-center"><strong><%=auction.product.category.name%></strong></p>
-                          <p class="text-primary mb-0 mr-2 grade my-auto"><strong><%=auction.bids.count%> pujas</strong></p>
-                          
-                          <div class="ml-auto mr-3 d-flex justify-content-center align-items-center "> 
-                                <% if signed_in?%>
-                                    <% if current_user.voted_up_on? auction %>
-                                        
-                                        <%= link_to unlike_auction_path(auction), class:"like", method: :put do %>
-                                        <span class="mr-1"><i class="lni  lni-lg lni-heart-filled like"></i></i></span>
+  </div>
+  
+  
+  <h2 class="title-listado">Subastas Activas</h2>
+  <div class="row ">
+    <% @auctions.each do |auction| %>
+    <div class="col-sm-12 col-md-6">
+        <div class="row d-flex justify-content-center">
+        <div class="card border-0">
+                <div class="row set-p justify-content-center ">
+                    <div class="col-sm-4 px-0"> <%= image_tag auction.product.image, class:"image" %> </div>
+                    <div class="col-sm-8">
+                        <div class="row px-3 mt-4 mb-3 upinfo d-flex">
+
+                            <p class="rating mb-0 px-2 mr-3 my-auto <%=auction.product.category.color%> d-flex justify-content-center align-items-center"><strong><%=auction.product.category.name%></strong></p>
+                            <p class="text-primary mb-0 mr-2 grade my-auto"><strong><%=auction.bids.count%> pujas</strong></p>
+                            
+                            <div class="ml-auto mr-3 d-flex justify-content-center align-items-center "> 
+                                    <% if signed_in?%>
+                                        <% if current_user.voted_up_on? auction %>
+                                            
+                                            <%= link_to unlike_auction_path(auction), class:"like", method: :put do %>
+                                            <span class="mr-1"><i class="lni  lni-lg lni-heart-filled like"></i></i></span>
+                                            <%end%>
+                                            <p class="text-secondary creator mb-1"><%=auction.get_upvotes.size %></p>
+                                        <%else%>
+                                            
+                                            <%= link_to like_auction_path(auction), class:"like", method: :put do %>
+                                            <span class="mr-1"><i class="lni lni-lg lni-heart unlike"></i></span>
+                                            <%end%>
+                                            <p class="text-secondary creator mb-1"><%=auction.get_upvotes.size %></p>
                                         <%end%>
-                                        <p class="text-secondary creator mb-1"><%=auction.get_upvotes.size %></p>
                                     <%else%>
-                                        
-                                        <%= link_to like_auction_path(auction), class:"like", method: :put do %>
-                                        <span class="mr-1"><i class="lni lni-lg lni-heart unlike"></i></span>
-                                        <%end%>
+                                        <span class="mr-1"><i class="lni  lni-lg lni-heart-filled like"></i></i></span>
                                         <p class="text-secondary creator mb-1"><%=auction.get_upvotes.size %></p>
                                     <%end%>
-                                <%else%>
-                                    <span class="mr-1"><i class="lni  lni-lg lni-heart-filled like"></i></i></span>
-                                    <p class="text-secondary creator mb-1"><%=auction.get_upvotes.size %></p>
-                                <%end%>
-                                
-                          </div>
-                      </div>
-                    
-                      <div class="row px-3 d-flex flex-column">
-                          <h3 class="font-weight-bold title"><%= auction.title %></h3>
-                          <p class="text-secondary creator mb-4">creado por <%=auction.user.name %></p>
-                      </div>
-                      
-                      <div class="row px-3">
-                            <% if bid(auction).nil? %>
-                                <h5 class="mb-1 description"><%=auction.description%></h5>
-                            <%else%>
-                                <h5 class="mb-1 description"><%= last_bid_name(auction) %> va ganando</h5>
-                            <%end%>
-                      </div>
-                      
-                      <div class="line"></div>
-                      <div class="row px-3 mt-3">
-                          <h5 class="text-secondary mb-1">Puja mìnima</h5>
-                      </div>
-                      <div class="row px-3">
-                            <% if bid(auction).nil? %>
-                                <h2 class="text-success mb-1 font-weight-bold price">$<%= auction.initial_price %></h2>
-                            <%else%>
-                                <h2 class="text-success mb-1 font-weight-bold price">$<%= last_bid(auction) %></h2>
-                            <%end%>
-                          
-                      </div>
-                      <div class="row px-3 mb-3">
-                          <p class="text-muted mb-0">+ $<%= auction.product.delivery_cost %> costos de envìo</p>
-                      </div>
-                      <div class="d-flex justify-content-between align-items-center mx-1">
-                        <div class="d-flex flex-column justify-content-center align-items-center mx-1">
-                            <span class="time-words"><%=distance_of_time_in_words(Time.now,auction.end_date, include_seconds: true, scope: 'datetime.distance_in_words.short')%></span>
-                            <p class="mb-0 text-center plus">tiempo restante</p>
+                                    
+                            </div>
                         </div>
-                        <%= link_to 'Pujar ahora', auction, class:"btn btn-outline-success button-search float-right my-3" %>
-                      </div>
-                      
-                      
-                          
-                  </div>
-                  
-              </div>
-          </div>
-  
-    </div>
+                        
+                        <div class="row px-3 d-flex flex-column">
+                            <h3 class="font-weight-bold title"><%= auction.title %></h3>
+                            <p class="text-secondary creator mb-4">creado por <%=auction.user.name %></p>
+                        </div>
+                        
+                        <div class="row px-3">
+                                <% if bid(auction).nil? %>
+                                    <h5 class="mb-1 description"><%=auction.description%></h5>
+                                <%else%>
+                                    <h5 class="mb-1 description"><%= last_bid_name(auction) %> va ganando</h5>
+                                <%end%>
+                        </div>
+                        
+                        <div class="line"></div>
+                        <div class="row px-3 mt-3">
+                            <h5 class="text-secondary mb-1">Puja mìnima</h5>
+                        </div>
+                        <div class="row px-3">
+                                <% if bid(auction).nil? %>
+                                    <h2 class="text-success mb-1 font-weight-bold price">$<%= auction.initial_price %></h2>
+                                <%else%>
+                                    <h2 class="text-success mb-1 font-weight-bold price">$<%= last_bid(auction) %></h2>
+                                <%end%>
+                            
+                        </div>
+                        <div class="row px-3 mb-3">
+                            <p class="text-muted mb-0">+ $<%= auction.product.delivery_cost %> costos de envìo</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mx-1">
+                            <div class="d-flex flex-column justify-content-center align-items-center mx-1">
+                                <span class="time-words"><%=distance_of_time_in_words(Time.now,auction.end_date, include_seconds: true, scope: 'datetime.distance_in_words.short')%></span>
+                                <p class="mb-0 text-center plus">tiempo restante</p>
+                            </div>
+                            <%= link_to 'Pujar ahora', auction, class:"btn btn-outline-success button-search float-right my-3" %>
+                        </div>
+                        
+                        
+                            
+                    </div>
+                    
+                </div>
+            </div>
     
+        </div>
+        
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
-</div>
+
+
 
 

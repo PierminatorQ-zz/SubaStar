@@ -42,12 +42,15 @@
      
     
     </ul>
+
     <%= form_tag(root_path, :method => "get",   
         class: 'form-inline my-2 my-lg-0') do %>  
-      <div class="input-group">  
-        <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control mr-sm-2 input-search" %>  
-        <div class="input-group-btn">  
-          <%= button_tag "X", :class => 'btn btn-outline-success my-2 my-sm-0 button-search',:name => nil%>  
+      <div class="input-group ">  
+        <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control  input-search" %>  
+        <div class="input-group-append">  
+          <%= button_tag :class => 'btn btn-outline-success my-sm-0 button-search text-center',:name => nil do%> 
+          <i class="lni lni-lg lni-search-alt"></i> 
+          <%end%>
         </div>  
       </div>  
     <% end %>
@@ -56,4 +59,6 @@
   </div>
   </div>
 </nav>
+  
+
   

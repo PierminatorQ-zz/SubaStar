@@ -32,8 +32,12 @@ h1,h2,h3,h4,h5 {
 
   .navbar-brand{
     font-weight: 900;
-    font-size: 1.2em;
-    color:$cyan;
+    font-size: 1.5em;
+    color:$electric;
+    
+    &:hover{
+      color:$cyan;
+    }
   }
 
   .input-search{
@@ -52,16 +56,19 @@ h1,h2,h3,h4,h5 {
 }
 
 .button-search{
+  font-weight: 700;
   border-radius: 20px;
   border-color: $electric;
-  color:$electric;
+  color:white;
   font-family: $raleway;
   font-size: 0.8em;
+  background-color: $electric;
       
 
   &:hover{
-    background-color: $electric;
-    color:white;
+    background-color: white;
+    color:$electric;
+    border-color: $electric;
   }
 }
 
@@ -210,27 +217,28 @@ h1,h2,h3,h4,h5 {
   }
 
 
-  .auctions-dash{
-    margin: 50px 0;
-    padding:0 40px;
-    border: 1px solid $grayLight;
-    background-color: white;
-    border-radius: 1em;
-    box-shadow: $shadowBox;
-
-    table{
-      font-size:0.8em;
-
-      th{
-        background-color: $grayLight;
-        color: $grayDark;
-        font-size:1em;
-        font-weight: 300;
-      }
-    }
-  }
-
+  
 }
+    .auctions-dash{
+      
+        margin: 100px 0 50px 0;
+        padding:40px 40px;
+        border: 1px solid $grayLight;
+        background-color: white;
+        border-radius: 1em;
+        box-shadow: $shadowBox;
+    
+        table{
+          font-size:0.8em;
+    
+          th{
+            background-color: $grayLight;
+            color: $grayDark;
+            font-size:1em;
+            font-weight: 300;
+          }
+        }
+      }
 
 .btn-form{
   background-color: $electric;

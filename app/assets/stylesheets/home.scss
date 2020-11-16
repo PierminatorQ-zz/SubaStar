@@ -1,3 +1,251 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+.header{
+  margin:50px 0 20px 0;
+
+  .title-header{
+    color: $electric;
+    font-family: $raleway;
+    font-weight: 900;
+    font-size: 4.5em;
+  }
+  .subtitle-header{
+    font-size:2.2em;
+    font-weight:300;
+  }
+  .img-hero{
+    width: 75%;
+  }
+  .tagline{
+    color:$grayDark;
+    font-size:1em;
+    font-weight: 300;
+    font-family: $open;
+  }
+  
+}
+
+.cta-left{
+  padding: 2% 0;
+  width:100%;
+  height: 80px;
+  background-color: $electric;
+  border-radius: 1em 0 0 1em;
+  box-shadow: $shadowBox;
+  color:white;
+  font-size:1.2em;
+  font-family:$raleway;
+  font-weight: 900;
+  
+  
+    &:hover{
+      text-decoration: none;
+      color:$cyan;
+    }
+  
+}
+.cta-right{
+  padding: 2% 0;
+  width:100%;
+  height: 80px;
+  background-color: $cyan;
+  border-radius: 0 1em 1em 0;
+  box-shadow: $shadowBox;
+  color:white;
+  font-size:1.2em;
+  font-family:$raleway;
+  font-weight: 900;
+    &:hover{
+      text-decoration: none;
+      color:$electric;
+    }
+  
+}
+
+.cta {
+  margin-bottom: 150px;
+}
+
+.title-listado{
+  
+  font-family: $raleway;
+  font-weight: 900;
+  margin-bottom: 50px;
+  
+}
+
+
+
+
+//footer
+
+#footer {
+  background: $electric;
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+  margin-top:150px;
+
+    
+
+     .footer-top {
+      padding: 60px 0 30px 0;
+    }
+
+     .footer-top .footer-info {
+      margin-bottom: 15px;
+      background: #4500ad;
+      color: #fff;
+      border-top: 4px solid $cyan;
+      text-align: center;
+      padding: 30px 20px;
+      
+      .footer-brand{
+        font-family: $raleway;
+        font-weight: 900;
+        font-size: 2em;
+      }
+    }
+
+     .footer-top .footer-info h3 {
+      font-size: 24px;
+      margin: 0 0 20px 0;
+      padding: 2px 0 2px 0;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .footer-top .footer-info p {
+      
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 0;
+      font-family: $open;
+    }
+
+     .footer-top .social-links a {
+      font-size: 18px;
+      display: inline-block;
+      color: #fff;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+    }
+
+     .footer-top .social-links a:hover {
+      background: $cyan;
+      color: #fff;
+      text-decoration: none;
+    }
+
+     .footer-top h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+     .footer-top .footer-links {
+      margin-bottom: 30px;
+    }
+
+     .footer-top .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+     .footer-top .footer-links ul i {
+      padding-right: 2px;
+      color: $cyan;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+     .footer-top .footer-links ul li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-top .footer-links ul li:first-child {
+      padding-top: 0;
+    }
+
+     .footer-top .footer-links ul a {
+      color: white;
+      transition: 0.3s;
+      display: inline-block;
+      line-height: 1;
+    }
+
+     .footer-top .footer-links ul a:hover {
+      color: $cyan;
+      text-decoration: none;
+    }
+
+     .footer-top .footer-newsletter form {
+      margin-top: 30px;
+      background: white;
+      padding: 6px 10px 6px 15px;
+      position: relative;
+      border-radius: 50px;
+    }
+
+    .footer-top .footer-newsletter form input[type="email"] {
+      border: 0;
+      padding: 4px;
+      width: calc(100% - 110px);
+    }
+
+     .footer-top .footer-newsletter form input[type="submit"] {
+      position: absolute;
+      top: 0;
+      right: -2px;
+      bottom: 0;
+      border: 0;
+      background: none;
+      font-size: 16px;
+      padding: 0 20px;
+      background: $cyan;
+      color: white;
+      transition: 0.3s;
+      border-radius: 50px;
+    }
+
+     .footer-top .footer-newsletter form input[type="submit"]:hover {
+      background: $cyan;
+    }
+
+     .copyright {
+      border-top: 1px solid $blackText;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .credits {
+      padding-top: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: white;
+    }
+
+}
+
+
+
+
+@media (max-width: 575px) {
+  #footer .footer-top .footer-info {
+    margin: -20px 0 30px 0;
+  }
+}
