@@ -294,3 +294,71 @@ h1,h2,h3,h4,h5 {
 .shadow-none {
   box-shadow: none!important;
 }
+
+
+.title-show{
+  font-family: $raleway;
+  font-weight: 900;
+  font-size:2em;
+
+
+}
+
+.finaliza{
+  font-family: $open;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/* timer._options.classNameSeconds       = classNames.seconds  || 'jst-seconds'
+      , timer._options.classNameMinutes   = classNames.minutes  || 'jst-minutes'
+      , timer._options.classNameHours     = classNames.hours    || 'jst-hours'
+      , timer._options.classNameClearDiv  = classNames.clearDiv || 'jst-clearDiv'
+      , timer._options.classNameTimeout   = classNames.timeout || 'jst-timeout'; */
+
+.timer{
+  padding: 20px;
+   font-size:3em;
+   font-family: $open;
+   color: $electric;
+   font-weight: 900;
+   border: 1px solid $electric;
+   border-radius: 0.5em;
+
+   .jst-hours{
+     padding-right: 20px;
+     &:after{
+       font-family: $raleway;
+       display: flex;
+       flex-direction: column;
+       content: "HORAS";
+       color:$grayDark;
+       font-size:0.3em;
+     }
+     
+   }
+
+   .jst-minutes{
+    padding-right: 20px;
+    &:after{
+      font-family: $raleway;
+      display: flex;
+      flex-direction: column;
+      content: "MINUTOS";
+      color:$grayDark;
+      font-size:0.3em;
+    }
+  }
+
+  .jst-seconds{
+    
+    &:after{
+      font-family: $raleway;
+      display: flex;
+      flex-direction: column;
+      content: "SEGUNDOS";
+      color:$grayDark;
+      font-size:0.3em;
+    }
+  }
+  }

@@ -1,32 +1,42 @@
 
-
-
-<div class="card" style="width: 18rem;">
-  <%= image_tag @auction.product.image.variant(resize:"200"), class:"card-img-top"%>
-  <div class="card-body">
-    <h5 class="card-title"><%= @auction.title %></h5>
-    <p class="card-text"><%= @auction.description %></p>
-    <div class='timer' data-seconds-left=<%= @countdown_seconds %>></div>
-    
-   
-          
-    <div id="biddes">
-    <% if @bid.nil?%>
-      <%=@auction.initial_price%>
-    <% else%>
-      <%= render @bid %>
-    <% end%>
+<div class="row">
+<div class="col-sm-12 col-md-5 d-flex justify-content-center">
+  <div class="card" style="width: 24rem;">
+    <%= image_tag @auction.product.image.variant(resize:"400"), class:"card-img-top"%>
+    <div class="card-body">
+      <h5 class="title-show mt-3"><%= @auction.title %></h5>
+      <p class="text-secondary"> Artista: <%=@auction.product.author%></p>
     </div>
-    <form>
-      <label>Escribe tu puja</label>
-      <input type="text" data-behavior="auction_speaker" data-auction="<%= @auction.id %>" placeholder="<%= @auction.initial_price + 50 %>">
-      
-    </form>
-  
-
-    
   </div>
 </div>
-
+<div class="col-sm-12 col-md-7">
+    <div class="card" style="width: 36rem;">
+      <div class="card-body">
+      <h5 class="title-show mt-3"><%= @auction.title %></h5>
+        <p class="text-secondary my-4">Descripciòn: <%= @auction.description %></p>
+        <hr>
+        <h3 class="finaliza"> Esta Subasta finaliza el <strong><%=l(@auction.end_date, :format => '%d %B %Y')%></strong></h3>
+        <div class="contador d-flex justify-content-center my-5">
+        <div class='timer' data-seconds-left=<%= @countdown_seconds %>>
+        </div>
+        </div>
+            
+        <div id="biddes">
+        <% if @bid.nil?%>
+          <%=@auction.initial_price%>
+        <% else%>
+          <%= render @bid %>
+        <% end%>
+        </div>
+        <form>
+          <label>Escribe tu puja</label>
+          <input type="text" data-behavior="auction_speaker" data-auction="<%= @auction.id %>" placeholder="<%= @auction.initial_price + 50 %>">
+          
+        </form>
+      </div>
+    </div>
+</div>
 <%= link_to 'Edit', edit_auction_path(@auction) %> |
 <%= link_to 'Back', auctions_path %>
+
+</div>
