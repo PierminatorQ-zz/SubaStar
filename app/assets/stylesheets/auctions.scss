@@ -318,15 +318,21 @@ h1,h2,h3,h4,h5 {
 
 .timer{
   padding: 20px;
-   font-size:3em;
+   font-size:2em;
    font-family: $open;
    color: $electric;
    font-weight: 900;
    border: 1px solid $electric;
    border-radius: 0.5em;
+   background-color: $grayLight;
+   box-shadow: $shadowBox;
+   
 
    .jst-hours{
-     padding-right: 20px;
+    align-items: center;
+    text-align: center;
+     margin-right:20px;
+     
      &:after{
        font-family: $raleway;
        display: flex;
@@ -339,7 +345,9 @@ h1,h2,h3,h4,h5 {
    }
 
    .jst-minutes{
-    padding-right: 20px;
+    align-items: center;
+    text-align: center;
+    margin-right:20px;
     &:after{
       font-family: $raleway;
       display: flex;
@@ -352,6 +360,8 @@ h1,h2,h3,h4,h5 {
 
   .jst-seconds{
     
+    align-items: center;
+    text-align: center;
     &:after{
       font-family: $raleway;
       display: flex;
@@ -361,4 +371,40 @@ h1,h2,h3,h4,h5 {
       font-size:0.3em;
     }
   }
+  }
+
+  .biddes-class {
+    
+
+    h2{
+    font-size:3em;
+    font-family:$open;
+    font-weight: 900;
+    color:$electric;
+    }
+  }
+
+  .write-bid{
+    border: 1px solid $cyan;
+    border-radius: 0.5em;
+    padding: 20px;
+    font-size:2em;
+    font-family:$open;
+    font-weight: 500;
+    &::placeholder{
+      opacity:0.3;
+      color:$electric;
+      
+    }
+    &[type="text"]:focus{
+      border: 1px solid $electric !important;
+      border-radius: 0.5em;
+      color:$electric;
+    }
+  }
+
+  .finaliza{
+    color:$blackText;
+    font-family: $raleway;
+    margin: 20px 20px;
   }

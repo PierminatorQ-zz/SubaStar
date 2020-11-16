@@ -6,37 +6,52 @@
     <div class="card-body">
       <h5 class="title-show mt-3"><%= @auction.title %></h5>
       <p class="text-secondary"> Artista: <%=@auction.product.author%></p>
+      <hr>
+        <p class="text-secondary my-4">Descripciòn: <%= @auction.description %></p>
+      
     </div>
   </div>
 </div>
 <div class="col-sm-12 col-md-7">
     <div class="card" style="width: 36rem;">
       <div class="card-body">
-      <h5 class="title-show mt-3"><%= @auction.title %></h5>
-        <p class="text-secondary my-4">Descripciòn: <%= @auction.description %></p>
-        <hr>
+        
         <h3 class="finaliza"> Esta Subasta finaliza el <strong><%=l(@auction.end_date, :format => '%d %B %Y')%></strong></h3>
         <div class="contador d-flex justify-content-center my-5">
         <div class='timer' data-seconds-left=<%= @countdown_seconds %>>
         </div>
         </div>
-            
-        <div id="biddes">
-        <% if @bid.nil?%>
-          <%=@auction.initial_price%>
-        <% else%>
-          <%= render @bid %>
-        <% end%>
+            <hr>
+        <div class="row info-bid d-flex justify-content-between">
+          <% if (@auction.bids.last).nil?%>
+          <p class="current_bid text-secondary px-5">Puja Ahora !!</p>
+          <%else%>
+          <p class="current_bid text-secondary px-5"> <strong>Ultima puja por:</strong>  <%=@auction.bids.last.user.name%></p>
+          <%end%>
+
+          <p class="bids_num text-secondary px-5"> <%=@auction.bids.count%> Pujas</p>
         </div>
-        <form>
-          <label>Escribe tu puja</label>
-          <input type="text" data-behavior="auction_speaker" data-auction="<%= @auction.id %>" placeholder="<%= @auction.initial_price + 50 %>">
+        <div class="bid-container text-center ">
+        <p class="current text-secondary mb-0">
+        Puja Actual
+        </p>
+          <div id="biddes" class="biddes-class text-center">
+            <% if @bid.nil?%>
+              <h2>$<%=@auction.initial_price%></h2>
+            <% else%>
+              <%= render @bid %>
+            <% end%>
+          </div>
+        </div>
+        <form class="text-center my-4">
+          
+          <input type="text" class="write-bid" data-behavior="auction_speaker" data-auction="<%= @auction.id %>" placeholder="<%= placeholder_mas(@auction) %>">
           
         </form>
       </div>
     </div>
 </div>
-<%= link_to 'Edit', edit_auction_path(@auction) %> |
-<%= link_to 'Back', auctions_path %>
+<%#= link_to 'Edit', edit_auction_path(@auction) %> 
+<%#= link_to 'Back', auctions_path %>
 
 </div>

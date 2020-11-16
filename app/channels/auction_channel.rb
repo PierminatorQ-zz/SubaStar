@@ -15,13 +15,12 @@ class AuctionChannel < ApplicationCable::Channel
       if data['bid'].to_i < Bid.where(auction_id: data['auction_id']).last.amount
         puts "no se puede"
       else
-        if  dateNow<= 30
-          dateNow = dateNow + 30
-        end
-        Bid.create! amount: data['bid'], auction_id: data['auction_id'], user_id: current_user.id
         
+        Bid.create! amount: data['bid'], auction_id: data['auction_id'], user_id: current_user.id
+        flash.now[:notice] = "dale dale dale"
       end
     else
+      flash[:alert]= "estamos guardando"
       Bid.create! amount: data['bid'], auction_id: data['auction_id'], user_id: current_user.id
       if  dateNow<= 30
         dateNow = dateNow + 30
