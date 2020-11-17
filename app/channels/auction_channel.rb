@@ -1,5 +1,8 @@
 class AuctionChannel < ApplicationCable::Channel
+ 
+
   def subscribed
+    
      stream_from "auction_channel"
      
   end
@@ -17,7 +20,7 @@ class AuctionChannel < ApplicationCable::Channel
       else
         
         Bid.create! amount: data['bid'], auction_id: data['auction_id'], user_id: current_user.id
-        flash.now[:notice] = "dale dale dale"
+        
       end
     else
       flash[:alert]= "estamos guardando"
