@@ -41,8 +41,8 @@
               <%= link_to 'Quieres registrarte?', new_user_registration_path, class:"d-block text-center mt-4 small" %>
               
               <hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase btnn" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase btnn" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
+               <%= link_to 'Sign up with Google', user_google_oauth2_omniauth_authorize_path, class:"btn btn-lg btn-google btn-block text-uppercase btnn" %>
+              
             <% end %>
             
             

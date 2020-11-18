@@ -13,9 +13,15 @@
   <body>
      <%= render partial: 'shared/navbar' %>
 
-    
+    <div class="container">
+    <% if signed_in?%>
+      <span class="text-secondary float-right email">Bienvenido <strong><%= current_user.email %></strong></span>
+    <%end%>
+    </div>
     
   <div class="container">
+          
+        
       <%= yield %>
       <%= toastr_flash %>
   </div>
