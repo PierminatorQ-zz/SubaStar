@@ -66,7 +66,11 @@
                         <th><%=auction.title%></th>
                         <td><%=auction.status%></td>
                         <td><%=winner(auction)%></td>
-                        <td><%=auction.bids.last.amount%></td>
+                        <%if auction.winner_id.present?%>
+                          <td><%=auction.bids.last.amount%></td>
+                        <%else%>
+                          <td>sin pujas</td>
+                        <%end%>
                       </tr>
                     <%end%>
                     </tbody>
