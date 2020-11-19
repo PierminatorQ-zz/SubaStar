@@ -15,7 +15,7 @@ module AuctionsHelper
     show_price
   end
 
-
+ 
 
   def translate status
   traduccion= ""

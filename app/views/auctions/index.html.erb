@@ -22,7 +22,7 @@
                           <p class="rating mb-0 px-2 mr-3 <%=auction.product.category.color%> "><strong><%=auction.product.category.name%></strong></p>
                           <p class="text-primary mb-0 mr-2 grade"><strong><%=auction.bids.count%> pujas</strong></p>
                           <p class="text-secondary mb-0 mr-2">&middot;</p>
-                          <p class="text-secondary mb-0 ml-auto">estado <%= link_to translate(auction.status), toggle_status_auction_path(auction), class:auction.status %>   </p>
+                          <p class="text-secondary mb-0 ml-auto ">estado <%= link_to_if auction.active? || auction.inactive?, translate(auction.status), toggle_status_auction_path(auction), class:auction.status %>   </p>
                       </div>
                       <div class="row px-3">
                           <h3 class="font-weight-bold title"><%= auction.title %></h3>
