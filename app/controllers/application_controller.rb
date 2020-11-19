@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
           f.winner_id = last_bid.user_id
           f.won
           f.save
+          winner_send(f)
           
         else
           f.abandon
@@ -27,6 +28,13 @@ class ApplicationController < ActionController::Base
           redirect_to root_path
         end
       end
+    end
+
+
+    def winner_send(auction)          
+          userId= auction.winner_id
+          user= User.find(userId)
+          WinnerMailer.winner_send(user, auction.title).deliver_later
     end
   end
 

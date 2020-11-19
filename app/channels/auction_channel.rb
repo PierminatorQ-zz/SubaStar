@@ -23,7 +23,7 @@ class AuctionChannel < ApplicationCable::Channel
         
       end
     else
-      flash[:alert]= "estamos guardando"
+      
       Bid.create! amount: data['bid'], auction_id: data['auction_id'], user_id: current_user.id
       if  dateNow<= 30
         dateNow = dateNow + 30
