@@ -18,7 +18,8 @@
         
         <h3 class="finaliza"> Esta Subasta finaliza el <strong><%=l(@auction.end_date, :format => '%d %B %Y')%></strong></h3>
         <div class="contador d-flex justify-content-center my-5">
-        <div class='timer' data-seconds-left=<%= @countdown_seconds %>>
+        
+        <%= render 'timer', countdown_seconds: @countdown_seconds %>
         </div>
         </div>
             <hr>

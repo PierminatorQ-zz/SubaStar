@@ -105,3 +105,4 @@ en:
         less_than_x_minutes:
           one: menos de un minuto
           other: menos de %{count} minutos
+        half_a_minute: menos de un minuto

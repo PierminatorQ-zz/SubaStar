@@ -6,7 +6,11 @@ App.auction = App.cable.subscriptions.create "AuctionChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
+    
     $("#biddes").html data['bid']
+    $('.contador').html data['timer']
+    $('.timer').startTimer();
+    
     # Called when there's incoming data on the websocket for this channel
 
   bidding:(bid, auction_id) ->
