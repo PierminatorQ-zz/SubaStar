@@ -1,7 +1,7 @@
 class Auction < ApplicationRecord
   belongs_to :user
   belongs_to :product
-  has_many :bids
+  has_many :bids, dependent: :destroy
 
   #votable feature
   acts_as_votable

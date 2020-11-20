@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'dashboard', to:'dashboard#index'
+  get 'productos', to:'dashboard#productos'
+  get 'dashboard/auctions'
   get 'perfil', to:'dashboard#perfil'
   get 'home/index'
   root to: "home#index"

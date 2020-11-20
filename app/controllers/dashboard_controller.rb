@@ -1,11 +1,11 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
-  before_action :user_admin!
-  layout 'dashboard'
+  before_action :user_admin!, except: [:perfil]
+ 
 
   def index
-    @auctions= Auction.all
-    @products=Product.all
+    
+    
     @users=User.all
     @auctions_by_user = Auction.all
                         .group(:status).count
@@ -13,8 +13,6 @@ class DashboardController < ApplicationController
     @money_average =Auction.where(winner_id:current_user.id)
                     .group(:initial_price)
                     .count
-    
-    
   end
 
   def user_admin!
@@ -24,6 +22,15 @@ class DashboardController < ApplicationController
   def perfil
     @user = current_user
   end
+
+  def productos
+    @products=Product.all
+  end
+
+  def auctions
+    @auctions= Auction.all
+  end
+  
 
 
   

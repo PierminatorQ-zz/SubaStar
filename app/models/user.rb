@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:google_oauth2]
 
-         has_many :products
-         has_many :auctions
-         has_many :bids
+         has_many :products, dependent: :destroy
+         has_many :auctions, dependent: :destroy
+         has_many :bids, dependent: :destroy
          acts_as_voter
         
          

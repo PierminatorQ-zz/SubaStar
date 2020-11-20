@@ -17,12 +17,47 @@
         <li class="nav-item">
           <%= link_to 'Mis Subastas', auctions_path, :class => 'nav-link' %> 
         </li>
+        <!--
         <li class="nav-item">
           <%= link_to 'Mis Productos', products_path, :class => 'nav-link' %> 
         </li>
+        -->
+         <li class="nav-item dropdown">
+         
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mi perfil
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Ver mi perfil", perfil_path, :class => 'dropdown-item'  %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'dropdown-item' %> 
+            </div>
+            
+            
+        </li>
+
+       
+         
+
         <% if current_user.admin?%>
+        <li class="nav-item dropdown">
+         
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dashboard
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Dashboard", dashboard_path, :class => 'dropdown-item'  %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Productos", productos_path, :class => 'dropdown-item'  %> 
+              <div class="dropdown-divider"></div>
+              <%= link_to "Subastas", dashboard_auctions_path, :class => 'dropdown-item'  %> 
+            </div>
+            
+            
+        </li>
+
           <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, :class => 'nav-link'  %>
+          
           </li>
         <%end%>
        
