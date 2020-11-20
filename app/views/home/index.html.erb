@@ -12,7 +12,7 @@
   </div>
   </div>
   <div class="row cta">
-      <%= link_to 'Quiero Ganar Subastas', root_path, class:"col-sm-6  cta-left text-center" %>
+      <%= link_to 'Quiero Ganar Subastas', signed_in? ? root_path : new_user_session_path, class:"col-sm-6  cta-left text-center" %>
    
     <%= link_to 'Quiero Subastar un producto', auctions_path, class:"col-sm-6  cta-right text-center" %>
 

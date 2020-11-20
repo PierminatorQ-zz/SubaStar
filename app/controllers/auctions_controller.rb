@@ -1,7 +1,8 @@
 class AuctionsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
   before_action :set_auction, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :toggle_status]
   after_action :blank_auction, only: [:index]
+
  # after_action :winner_send, only: [:index]
   
   
