@@ -1,5 +1,8 @@
 module AuctionsHelper
 
+  
+
+
   def last_bid auction
     @bid_last= Bid.where(auction_id: auction.id).last
     @bid_last.amount

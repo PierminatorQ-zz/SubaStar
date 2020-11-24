@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light">
 <div class="container">
   <%= link_to  root_path ,class:"brand-container" do%>
   <%= image_tag '250X83_COLOR', class:"navbar-brand img-fluid" %>
@@ -85,18 +85,28 @@
     
     </ul>
 
-    <%= form_tag(root_path, :method => "get",   
-        class: 'form-inline my-2 my-lg-0') do %>  
-      <div class="input-group ">  
-        <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control  input-search" %>  
-        <div class="input-group-append">  
-          <%= button_tag :class => 'btn btn-outline-success my-sm-0 button-search text-center',:name => nil do%> 
-          <i class="lni lni-lg lni-search-alt"></i> 
-          <%end%>
+    <% if controller_name == 'home' && action_name == 'index' %>
+    
+      <%= form_tag(root_path, :method => "get",   
+          class: 'form-inline my-2 my-lg-0') do %>  
+        <div class="input-group ">  
+          <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control  input-search" %>  
+          <div class="input-group-append">  
+            <%= button_tag :class => 'btn btn-outline-success my-sm-0 button-search text-center',:name => nil do%> 
+            <i class="lni lni-lg lni-search-alt"></i> 
+            <%end%>
+          </div>  
         </div>  
-      </div>  
-    <% end %>
-
+      <% end %>
+    <%else%>
+     <!--
+     <div class="container">
+      <% if signed_in?%>
+        <span class="text-secondary float-right email">Bienvenido <strong><%= current_user.email %></strong></span>
+      <%end%>
+    </div>
+     -->
+    <%end%>
     
   </div>
   </div>

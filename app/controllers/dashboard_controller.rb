@@ -21,6 +21,7 @@ class DashboardController < ApplicationController
 
   def perfil
     @user = current_user
+    @auctions = Auction.where(winner_id:@user.id)
   end
 
   def productos

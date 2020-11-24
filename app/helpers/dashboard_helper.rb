@@ -12,17 +12,6 @@ module DashboardHelper
     auction=Auction.find(id)
   end
 
-  def winner(auction)
-    winner=""
-    if auction.winner_id.present?
-    userId= auction.winner_id
-    user = User.find(userId)
-    winner=user.name
-    
-    else
-      winner="desierta"
-    end
-    winner
-  end
+  
   
 end

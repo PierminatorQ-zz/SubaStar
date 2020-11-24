@@ -36,8 +36,8 @@ class Auction < ApplicationRecord
   end
 
   #scope show only actives
-  scope :only_active, ->(auction) { where(status: "active")}
-  scope :auction_by, ->(user) { where(user_id: user.id)}
+  #scope :only_active, ->(auction) { where(status: "active")}
+  #scope :auction_by, ->(user) { where(user_id: user.id)}
 
 
 

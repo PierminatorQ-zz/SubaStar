@@ -10,9 +10,18 @@ module ApplicationHelper
     end.join("\n").html_safe
   end
 
-
-  def winner auction
-    winner = Bid.where(auction_id: auction.id).last
-    winner.user.name
+  def winner(auction)
+    
+    if auction.winner_id.present?
+    userId= auction.winner_id
+    user = User.find(userId)
+    winner=user.email.split('@')[0]
+    
+    else
+      winner="desierta"
+    end
+    winner
   end
+  
+
 end

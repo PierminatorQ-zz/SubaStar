@@ -50,7 +50,7 @@
             <div class="col-md-8">
               <div class="card2 mb-3">
                 <div class="card-body">
-                <h4> Subastas Creadas</h4>
+                <h4> Subastas Ganadas</h4>
                   <table class="table table-hover">
                      <thead>
                       <tr>
@@ -58,10 +58,11 @@
                         <th scope="col">Estado</th>
                         <th scope="col">Ganador</th>
                         <th scope="col">Ultima Puja</th>
+                        <th scope="col">Fecha de Cierre</th>
                       </tr>
                     </thead>
                     <tbody>
-                    <% @user.auctions.each do |auction|%>
+                    <% @auctions.each do |auction|%>
                       <tr>
                         <th><%=auction.title%></th>
                         <td><%=auction.status%></td>
@@ -71,6 +72,7 @@
                         <%else%>
                           <td>sin pujas</td>
                         <%end%>
+                        <td><%=(auction.updated_at).strftime('%e %B %Y')%></td>
                       </tr>
                     <%end%>
                     </tbody>

@@ -24,8 +24,8 @@ class ApplicationController < ActionController::Base
           f.winner_id = last_bid.user_id
           f.won
           f.save
-          #winner_send(f)
-          
+          winner_send(f)
+          redirect_to root_path
           
         else
           f.abandon
@@ -33,16 +33,13 @@ class ApplicationController < ActionController::Base
           redirect_to root_path
         end
       end
-    end
-
-
-    def winner_send(auction)          
-          userId= auction.winner_id
-          user= User.find(userId)
-          WinnerMailer.winner_send(user, auction.title).deliver_later
-    end
+    end 
   end
 
+def winner_send(auction)          
+    user= User.find(auction.winner_id)
+    WinnerMailer.winner_send(user, auction.title).deliver_now
+end
   
 def set_title
   @page_title= 'SubastArt | Compra arte desde tu casa'
