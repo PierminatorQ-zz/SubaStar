@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
           f.winner_id = last_bid.user_id
           f.won
           f.save
-          winner_send(f)
+          #winner_send(f)
           
           
         else

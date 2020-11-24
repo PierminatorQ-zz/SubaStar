@@ -6,7 +6,7 @@
              <!-- Background image for card set in CSS! -->
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center">Ingresa</h5>
+            <h5 class="card-title text-center title-sign">Ingresa</h5>
             
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             
@@ -38,7 +38,7 @@
               -->
               <%= f.submit "Ingresar" , class:"btn btn-lg btn-primary btn-block text-uppercase btn-form btnn"%>
               
-              <%= link_to 'Quieres registrarte?', new_user_registration_path, class:"d-block text-center mt-4 small" %>
+              <%= link_to 'Quieres registrarte?', new_user_registration_path, class:"d-block text-center mt-4 small want-it" %>
               
               <hr class="my-4">
                <%= link_to 'Ingresa con Google', user_google_oauth2_omniauth_authorize_path, class:"btn btn-lg btn-google btn-block text-uppercase btnn" %>

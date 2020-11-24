@@ -1,52 +1,62 @@
-<%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<div class="capsule">
+  <%= form_with(model: product, local: true) do |form| %>
+    <% if product.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="form-group col-sm-6 ">
+        <%= form.label :title %>
+        <%= form.text_field :title , class:"form-control"%>
+      </div>
+    
+      <div class="form-group col-sm-6">
+        <%= form.label :author %>
+        <%= form.text_field :author, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, class:"form-control" %>
+    </div>
+
+    <div class="row">
+    
+      <div class="form-group col-sm-6">
+        <%= form.label :initial_price %>
+        <%= form.number_field :initial_price, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <%= form.label :delivery_cost %>
+        <%= form.number_field :delivery_cost, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+    
+      <div class="form-group col-sm-6">
+        <%= form.label :image %>
+        <%= form.file_field :image, class:"form-control-file" %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <%= form.label :category_id %>
+        <%= form.collection_select :category_id, Category.all, :id, :name,{prompt: "Selecciona una categoria"},{ class:"form-control"} %>
+      </div>
+    </div>
+
+    <div class="actions mt-5">
+      <%= form.submit class:"btn btn-form btn-block" %>
     </div>
   <% end %>
-
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title , class:"form-control"%>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :description %>
-    <%= form.text_area :description, class:"form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :author %>
-    <%= form.text_field :author, class:"form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :initial_price %>
-    <%= form.number_field :initial_price, class:"form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :delivery_cost %>
-    <%= form.number_field :delivery_cost, class:"form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :image %>
-    <%= form.file_field :image, class:"form-control-file" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :name,{prompt: "Selecciona una categoria"},{ class:"form-control"} %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit class:"btn btn-form" %>
-  </div>
-<% end %>
+</div>

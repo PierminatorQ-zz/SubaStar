@@ -29,10 +29,12 @@ h1,h2,h3,h4,h5 {
   font-weight: 500;
   box-shadow: $shadowBox;
 
+  .brand-container{
+    width:220px;
+  }
 
   .navbar-brand{
-    font-weight: 900;
-    font-size: 1.5em;
+    width:65%;
     color:$electric;
     
     &:hover{
@@ -47,12 +49,38 @@ h1,h2,h3,h4,h5 {
     font-size: 0.8em;
   }
   
+
+
   .nav-item{
     padding: 0 20px;
-    
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+
+    .nav-link{
+      color:$grayDark;
+      &:hover{
+        color:$electric ;
+      }
+      
+    }
   }
 
   
+}
+
+.dropdown{
+  .dropdown-item{
+    color:$electric;
+    font-size: 0.7em;
+    font-family:$raleway;
+    font-weight: 700;
+
+    &:hover{
+      color:$cyan;
+    }
+  }
 }
 
 .button-search{
@@ -412,4 +440,70 @@ h1,h2,h3,h4,h5 {
 .email{
   font-size: 0.7em;
   font-family: $raleway;
+}
+
+.capsule{
+  background-color: white;
+  box-shadow: $shadowBox;
+  border-radius: 1em;
+  padding:100px 80px;
+
+  form {
+    
+    label{
+      color:$blackText;
+      text-transform: uppercase;
+      font-size: 0.7em;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+    }
+  }
+}
+
+.tit{
+
+  margin:20px 20px;
+
+  .title-form{
+    color:$electric;
+    font-family: $raleway;
+    font-weight: 900;
+    font-size:1.8em;
+    padding: 0;
+    margin-bottom:0px;
+    
+  }
+  .titlehr{
+    margin:10px 0 30px 0;
+    width: 100px;
+    border:2px solid $electric;
+  
+  }
+
+
+}
+
+.btn-google{
+  background-color: $pink !important;
+  &:hover{
+    color:$pink !important;
+    background-color: white !important;
+    border: 1px solid $pink !important;
+  }
+}
+.want-it{
+  color:$blackText;
+  font-family: $raleway;
+  font-weight: 300;
+  &:hover{
+    font-weight:500;
+    color:$cyan;
+    text-decoration: none;
+  }
+}
+
+.title-sign{
+  font-family: $raleway;
+  color:$blackText;
+  font-weight: 900 !important;
 }

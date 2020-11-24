@@ -1,49 +1,61 @@
-<%= form_with(model: auction, local: true) do |form| %>
-  <% if auction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(auction.errors.count, "error") %> prohibited this auction from being saved:</h2>
+<div class="capsule">
 
-      <ul>
-      <% auction.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class:"form-control" %>
-  </div>
+  <%= form_with(model: auction, local: true) do |form| %>
+    <% if auction.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(auction.errors.count, "error") %> prohibited this auction from being saved:</h2>
 
-  <div class="form-group">
-    <%= form.label :description %>
-    <%= form.text_area :description, class:"form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :initial_price %>
-    <%= form.number_field :initial_price, class:"form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :start_date %>
-    <%= form.datetime_local_field :start_date, class:"form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :end_date %>
-    <%= form.datetime_local_field :end_date, class:"form-control" %>
-  </div>
-
-
-  <div class="form-group">
-    <%= form.label :product_id %>
-    <%= form.collection_select :product_id, @products, :id, :title,{prompt: "Selecciona un producto"},{ class:"form-control"} %>
+        <ul>
+        <% auction.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
     
-  </div>
+    <div class="row">
+    
+      <div class="form-group col-sm-6">
+        <%= form.label "Titulo" %>
+        <%= form.text_field :title, class:"form-control" %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit class:"btn btn-form"%>
-  </div>
-<% end %>
+      <div class="form-group col-sm-6">
+        <%= form.label "Precio Inicial" %>
+        <%= form.number_field :initial_price, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label "Descripciòn" %>
+      <%= form.text_area :description, class:"form-control" %>
+    </div>
+
+    <div class="row">
+    
+      <div class="form-group col-sm-6">
+        <%= form.label "Fecha de Inicio" %>
+        <%= form.datetime_local_field :start_date, class:"form-control" %>
+      </div>
+auctions
+      <div class="form-group col-sm-6">
+        <%= form.label "Fecha de Finalizaciòn" %>
+        <%= form.datetime_local_field :end_date, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+    
+      <div class="form-group col-sm-6">
+        <%= form.label "Producto" %>
+        <%= form.collection_select :product_id, @products, :id, :title,{prompt: "Selecciona un producto"},{ class:"form-control picker"} %>
+        
+      </div>
+
+      <div class="actions col-sm-6 text-center my-auto">
+        <%= form.submit "Crear Subasta", class:"btn btn-form btn-block "%>
+      </div>
+    </div>
+
+  <% end %>
+</div>
