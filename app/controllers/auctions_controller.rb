@@ -19,7 +19,7 @@ class AuctionsController < ApplicationController
         @auctions = Auction.filtered_by_user(current_user).order(created_at: :desc)
       end
     end
-    
+    @page_title= 'Mis Subastas'
   end
 
   
@@ -31,7 +31,8 @@ class AuctionsController < ApplicationController
     @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date.in_time_zone, 1.second)
     @bid_last= Bid.where(auction_id: @auction.id).last
     @bid=@bid_last
-  
+    
+    @page_title= @auction.title
   end
 
   #uplike from user
@@ -57,6 +58,7 @@ class AuctionsController < ApplicationController
 
   # GET /auctions/new
   def new
+    @page_title= 'Crea tu Subasta'
     @auction = Auction.new
     @products = Product.where(user_id: current_user)
   end
@@ -67,6 +69,7 @@ class AuctionsController < ApplicationController
 
   # GET /auctions/1/edit
   def edit
+    @page_title= 'Edita tu subasta'
     @auction = Auction.find(params[:id])
     @products = Product.where(user_id: current_user)
   end

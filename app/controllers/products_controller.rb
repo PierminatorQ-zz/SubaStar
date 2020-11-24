@@ -5,26 +5,31 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    
     if current_user.admin?
       @products = Product.all
     else
     @products = Product.filtered_by_user(current_user)
     end
+    @page_title= 'Mis Productos a Subastar'
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @page_title= @product.title
   end
 
   # GET /products/new
   def new
+    @page_title= 'Crea tu Producto'
     @product = Product.new
     @categories = Category.all
   end
 
   # GET /products/1/edit
   def edit
+    @page_title= 'Edita tu producto'
   end
 
   # POST /products

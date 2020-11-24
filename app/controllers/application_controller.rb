@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_title
+
+
+
 
   protected
 
@@ -40,7 +44,9 @@ class ApplicationController < ActionController::Base
   end
 
   
-
+def set_title
+  @page_title= 'SubastArt | Compra arte desde tu casa'
+end
   
   
 

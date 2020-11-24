@@ -10,12 +10,7 @@
             
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             
-              <!--
-              <div class="form-label-group">
-                <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
-                
-              </div>
-              -->
+              
               <div class="form-label-group">
                 <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email address" %>
                 
@@ -30,12 +25,7 @@
                
               </div>
               
-              <!--
-              <div class="form-label-group">
-                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
-               
-              </div>
-              -->
+             
               <%= f.submit "Ingresar" , class:"btn btn-lg btn-primary btn-block text-uppercase btn-form btnn"%>
               
               <%= link_to 'Quieres registrarte?', new_user_registration_path, class:"d-block text-center mt-4 small want-it" %>
