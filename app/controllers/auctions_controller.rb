@@ -27,7 +27,8 @@ class AuctionsController < ApplicationController
   # GET /auctions/1
   # GET /auctions/1.json
   def show
-    
+
+    @auctions=Auction.joins(:product).where(products: {category_id:@auction.product.category_id}).only_active(@auction).uniq
     @countdown_seconds = timediff(DateTime.now.in_time_zone, @auction.end_date.in_time_zone, 1.second)
     @bid_last= Bid.where(auction_id: @auction.id).last
     @bid=@bid_last

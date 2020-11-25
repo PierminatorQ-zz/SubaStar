@@ -13,6 +13,8 @@
  *= require dashboard
  *= require bootstrap/dist/css/bootstrap
  *= require toastr
+ *= require owl.carousel.min
+ *= require owl.theme.default.min
  *= require_tree .
  *= require_self
  */

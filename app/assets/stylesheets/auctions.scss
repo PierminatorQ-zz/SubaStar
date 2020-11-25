@@ -509,3 +509,44 @@ h1,h2,h3,h4,h5 {
   color:$blackText;
   font-weight: 900 !important;
 }
+
+.title-fet{
+  font-size: 1em;
+}
+
+.rating2{
+  height: 20px;
+  font-size: 0.8em;
+
+}
+
+.text-secondary2{
+  font-size:0.6em;
+  font-family: $open;
+  
+}
+
+.nav-btn{
+  border:none;
+  color:$electric;
+  &:hover{
+    color:$cyan;
+  }
+}
+
+.owl-nav{
+  button{
+    border:none;
+    background-color: $whiteBg;
+    &:focus{
+      border:none;
+      border-bottom-color: $whiteBg !important;
+      outline-color: $whiteBg !important;
+    }
+    &:active{
+      border:none !important;
+      
+    }
+  }
+
+}

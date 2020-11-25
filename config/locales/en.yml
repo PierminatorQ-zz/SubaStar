@@ -184,3 +184,6 @@ es:
           one: menos de un minuto
           other: menos de %{count} minutos
         half_a_minute: menos de un minuto
+        about_x_months:
+          one: 'un mes'
+          other: '%{count} meses'

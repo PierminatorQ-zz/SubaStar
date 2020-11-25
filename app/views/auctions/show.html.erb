@@ -56,3 +56,9 @@
 <%#= link_to 'Back', auctions_path %>
 
 </div>
+<div class="tit d-flex flex-column mt-5">
+<h1 class="title-form mt-5">Subastas Relacionadas</h1>
+<hr class="titlehr">
+<div class="row mt-2 d-flex flex-column justify-content-center">
+  <%= render 'shared/featured', auctions: @auctions%>
+</div>

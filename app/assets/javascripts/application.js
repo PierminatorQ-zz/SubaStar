@@ -19,6 +19,7 @@
 //= require simpleTimer
 //= require displayTime
 //= require toastr
+//= require owl.carousel.min
 //= require bootstrap-notify.js
 //= require bootstrap/dist/js/bootstrap
 //= require popper.js/dist/popper
