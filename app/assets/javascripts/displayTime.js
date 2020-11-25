@@ -30,6 +30,22 @@ document.addEventListener('turbolinks:load', function(){
 })
  
 
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+    $('#header').addClass('header-scrolled');
+    $('#topbar').addClass('topbar-scrolled');
+    } else {
+    $('#header').removeClass('header-scrolled');
+    $('#topbar').removeClass('topbar-scrolled');
+    }
+});
+
+/* if ($(window).scrollTop() > 100) {
+    $('#header').addClass('header-scrolled');
+    $('#topbar').addClass('topbar-scrolled');
+} */
+    
+
 
 });
 

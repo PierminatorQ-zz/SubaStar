@@ -550,3 +550,69 @@ h1,h2,h3,h4,h5 {
   }
 
 }
+
+
+#topbar {
+  background: $electric;
+  height: 30px;
+  font-size: 0.8em;
+  transition: all 0.5s;
+  color: #fff;
+
+
+  
+
+  .contact-info a {
+    line-height: 1;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-info i {
+    padding-right: 4px;
+    margin-left: 15px;
+  }
+
+  .contact-info i:first-child {
+    margin-left: 0;
+  }
+
+  .social-links a {
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: 15px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+  }
+
+  .social-links a:hover {
+    color: #fff;
+  }
+
+}
+
+#header {
+  
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 25px 0;
+  top: 30px;
+  
+
+
+  
+}
+
+.header-scrolled {
+  top: 0 !important;
+  padding: 15px;
+}
+
+.topbar-scrolled {
+  top: -30px !important;
+  color:red;
+}
