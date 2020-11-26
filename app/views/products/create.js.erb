@@ -1,0 +1,8 @@
+$('#productModal').modal('hide')
+$('post-title').val('')
+$('post-content').val('')
+
+$('.picker').append($('<option>', {
+    value: '<%=@product.id%>',
+    text: '<%=@product.title%>'
+}));

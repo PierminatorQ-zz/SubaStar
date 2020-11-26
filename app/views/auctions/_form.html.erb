@@ -13,8 +13,10 @@
       </div>
     <% end %>
     
+      
     <div class="row">
     
+
       <div class="form-group col-sm-6">
         <%= form.label "Titulo" %>
         <%= form.text_field :title, class:"form-control" %>
@@ -45,13 +47,14 @@
     </div>
 
     <div class="row">
-    
+      
+      
       <div class="form-group col-sm-6">
         <%= form.label "Producto" %>
         <%= form.collection_select :product_id, @products, :id, :title,{prompt: "Selecciona un producto"},{ class:"form-control picker"} %>
         
       </div>
-
+      
       <div class="actions col-sm-6 text-center my-auto">
         <%= form.submit "Crear Subasta", class:"btn btn-form btn-block "%>
       </div>
@@ -59,3 +62,4 @@
 
   <% end %>
 </div>
+

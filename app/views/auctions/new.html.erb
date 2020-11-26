@@ -3,6 +3,88 @@
 <h1 class="title-form">Nueva Subasta</h1>
 <hr class="titlehr">
 </div>
+      <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#productModal">
+              Launch demo modal
+      </button>
+
 <%= render 'form', auction: @auction %>
 
 </div>
+
+
+<!-- Product modal-->
+
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel">Nuevo Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+
+          <div class="capsule">
+            <%= form_with(model: Product.new, remote: true) do |form| %>
+
+              <div class="row">
+                <div class="form-group col-sm-6 ">
+                  <%= form.label :title %>
+                  <%= form.text_field :title , class:"form-control"%>
+                </div>
+              
+                <div class="form-group col-sm-6">
+                  <%= form.label :author %>
+                  <%= form.text_field :author, class:"form-control" %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <%= form.label :description %>
+                <%= form.text_area :description, class:"form-control" %>
+              </div>
+
+              <div class="row">
+              
+                <div class="form-group col-sm-6">
+                  <%= form.label :initial_price %>
+                  <%= form.number_field :initial_price, class:"form-control" %>
+                </div>
+
+                <div class="form-group col-sm-6">
+                  <%= form.label :delivery_cost %>
+                  <%= form.number_field :delivery_cost, class:"form-control" %>
+                </div>
+              </div>
+
+              <div class="row">
+              
+                <div class="form-group col-sm-6">
+                  <%= form.label :image %>
+                  <%= form.file_field :image, class:"form-control-file" %>
+                </div>
+
+                <div class="form-group col-sm-6">
+                  <%= form.label :category_id %>
+                  <%= form.collection_select :category_id, Category.all, :id, :name,{prompt: "Selecciona una categoria"},{ class:"form-control"} %>
+                </div>
+              </div>
+
+              <div class="actions mt-5">
+                <%= form.submit class:"btn btn-form btn-block" %>
+              </div>
+            <% end %>
+          </div>
+
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+

@@ -39,6 +39,7 @@ class ProductsController < ApplicationController
     @product.user = current_user
     respond_to do |format|
       if @product.save
+        format.js
         format.html { redirect_to products_path, notice: 'Product was successfully created.' }
         format.json { render :index, status: :created, location: @product }
       else
@@ -53,9 +54,11 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+        
         format.html { redirect_to products_path, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
+        
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end

@@ -62,6 +62,10 @@ class AuctionsController < ApplicationController
     @page_title= 'Crea tu Subasta'
     @auction = Auction.new
     @products = Product.where(user_id: current_user)
+    @product=Product.new
+
+  
+    
   end
 
   def timediff(x,y,method)

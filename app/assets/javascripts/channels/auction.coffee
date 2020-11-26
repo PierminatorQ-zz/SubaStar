@@ -16,18 +16,12 @@ App.auction = App.cable.subscriptions.create "AuctionChannel",
   bidding:(bid, auction_id) ->
     @perform 'bidding', {bid: bid, auction_id: auction_id}
 
+
 $(document).on 'keypress', '[data-behavior~=auction_speaker]', (event) ->
   
   if event.keyCode is 13
     auction_id=this.attributes["data-auction"].value
     App.auction.bidding event.target.value, auction_id
     event.target.value = ''
-    event.preventDefault() 
-
-
-    ### $(document).on 'keypress', '[data-behavior~=auction_speaker]', (event) ->
-  
-  if event.keyCode is 13
-    App.auction.bidding event.target.value
-    event.target.value = ''
-    event.preventDefault() ###
+    event.preventDefault()
+   
