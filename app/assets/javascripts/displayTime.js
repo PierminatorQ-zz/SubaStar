@@ -48,7 +48,34 @@ $(window).scroll(function() {
     $('#header').addClass('header-scrolled');
     $('#topbar').addClass('topbar-scrolled');
 } 
+  
+//vertical scroll bar
+$(document).scroll(function (e) {
+
     
+    let scrollAmount = $(window).scrollTop() + 80;
+    let documentHeight = $(document).height();
+    let windowHeight = $(window).height()+250;
+    let scrollPercent = (scrollAmount / (documentHeight - windowHeight)) * 100;
+    let roundScroll = Math.round(scrollPercent);
+   
+    
+      
+    // vertical scroll
+    $(".scrollBar").css("height", scrollPercent + "%");
+    
+    
+    console.log($(window).scrollTop())
+
+    scrollCalc(46,".dos");
+    scrollCalc(159,".tres");
+    scrollCalc(296,".cuatro");
+    scrollCalc(431,".cinco");
+    scrollCalc(560,".seis");
+    
+
+   
+});
 
 
 });
@@ -61,4 +88,15 @@ function borraContador(){
     toastr["success"]("la subasta ha terminado, recibiràs un email si has sido el ganador.", "Subasta finalizada")
     
     
+}
+
+
+function scrollCalc(scroll,clase){
+    if ($(window).scrollTop() > scroll){
+        $(clase).addClass( "actives");
+    }
+    else {
+        $(clase).removeClass("actives");
+    }
+
 }

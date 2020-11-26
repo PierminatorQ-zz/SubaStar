@@ -1,14 +1,97 @@
 <div class="container m-5">
-<div class="tit d-flex flex-column">
-<h1 class="title-form">Nueva Subasta</h1>
-<hr class="titlehr">
+    <div class="tit d-flex flex-column">
+      <h1 class="title-form">Nueva Subasta</h1>
+      <hr class="titlehr">
+    </div>
+  <div class="capsule d-flex  p-5 row">
+    <div class="col-sm-1 d-flex flex-column align-items-center">
+      <div class="container-balls">
+        <div class="uno actives ball  d-flex justify-content-center align-items-center">
+          <strong> 1 </strong> 
+        </div>
+        <div class="dos incomplete ball  d-flex justify-content-center align-items-center">
+          <strong> 2 </strong> 
+        </div>
+        <div class="tres incomplete ball  d-flex justify-content-center align-items-center">
+          <strong> 3 </strong> 
+        </div>
+        <div class="cuatro incomplete ball  d-flex justify-content-center align-items-center">
+          <strong> 4 </strong> 
+        </div>
+        <div class="cinco incomplete ball  d-flex justify-content-center align-items-center">
+          <strong> 5 </strong> 
+        </div>
+        <div class="seis incomplete ball  d-flex justify-content-center align-items-center">
+          <strong> 6 </strong> 
+        </div>
+      </div>
+      <div class="scrollBar">
+        <span></span>
+      </div>
+    </div>
+    <div class="col-sm-11 px-5">
+
+      <button type="button" class="btn btn-form" data-toggle="modal" data-target="#productModal">Crea un producto</button>
+
+      <div class="capsule2 mt-5">
+
+  <%= form_with(model: @auction, local: true) do |form| %>
+     
+      
+    <div class="row">
+    
+
+      <div class="form-group col-sm-12">
+        <%= form.label "ESCOGE EL TITULO DE TU SUBASTA" %>
+        <%= form.text_field :title, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-sm-12">
+        <%= form.label "EL Precio Inicial" %>
+        <%= form.number_field :initial_price, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.label "UNA BREVE Descripciòn" %>
+      <%= form.text_area :description, class:"form-control" %>
+    </div>
+
+    <div class="row">
+    
+      <div class="form-group col-sm-12 col-md-6">
+        <%= form.label "Fecha de Inicio" %>
+        <%= form.datetime_local_field :start_date, class:"form-control" %>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-6">
+        <%= form.label "Fecha de Finalizaciòn" %>
+        <%= form.datetime_local_field :end_date, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row">
+      
+      
+      <div class="form-group col-sm-12">
+        <%= form.label " SELECCIONA EL Producto A SUBASTAR" %>
+        <%= form.collection_select :product_id, @products, :id, :title,{prompt: "Selecciona un producto"},{ class:"form-control picker"} %>
+        
+      </div>
+      
+      <div class="actions col-sm-12 text-center my-auto">
+        <%= form.submit "Crea tu Subasta", class:"btn btn-form btn-block mt-5 "%>
+      </div>
+    </div>
+
+  <% end %>
 </div>
-      <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#productModal">
-              Launch demo modal
-      </button>
 
-<%= render 'form', auction: @auction %>
 
+      <!-- Product modal
+      <%= render 'form', auction: @auction %>-->
+    </div>
+  </div>
 </div>
 
 
@@ -18,8 +101,8 @@
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="productModalLabel">Nuevo Producto</h5>
+      <div class="modal-header bg-electric">
+        <h5 class="modal-title ml-5" id="productModalLabel">Nuevo Producto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -29,35 +112,35 @@
         
 
 
-          <div class="capsule">
+          <div class="capsule2 p-5">
             <%= form_with(model: Product.new, remote: true) do |form| %>
 
               <div class="row">
                 <div class="form-group col-sm-6 ">
-                  <%= form.label :title %>
+                  <%= form.label "NOMBRE DEL PRODUCTO" %>
                   <%= form.text_field :title , class:"form-control"%>
                 </div>
               
                 <div class="form-group col-sm-6">
-                  <%= form.label :author %>
+                  <%= form.label "AUTOR" %>
                   <%= form.text_field :author, class:"form-control" %>
                 </div>
               </div>
 
               <div class="form-group">
-                <%= form.label :description %>
+                <%= form.label "DESCRIPCION" %>
                 <%= form.text_area :description, class:"form-control" %>
               </div>
 
               <div class="row">
               
                 <div class="form-group col-sm-6">
-                  <%= form.label :initial_price %>
+                  <%= form.label "PRECIO" %>
                   <%= form.number_field :initial_price, class:"form-control" %>
                 </div>
 
                 <div class="form-group col-sm-6">
-                  <%= form.label :delivery_cost %>
+                  <%= form.label "COSTO DE ENVIO" %>
                   <%= form.number_field :delivery_cost, class:"form-control" %>
                 </div>
               </div>
@@ -65,18 +148,18 @@
               <div class="row">
               
                 <div class="form-group col-sm-6">
-                  <%= form.label :image %>
+                  <%= form.label "IMAGEN" %>
                   <%= form.file_field :image, class:"form-control-file" %>
                 </div>
 
                 <div class="form-group col-sm-6">
-                  <%= form.label :category_id %>
+                  <%= form.label "CATEGORIA" %>
                   <%= form.collection_select :category_id, Category.all, :id, :name,{prompt: "Selecciona una categoria"},{ class:"form-control"} %>
                 </div>
               </div>
 
               <div class="actions mt-5">
-                <%= form.submit class:"btn btn-form btn-block" %>
+                <%= form.submit "Crea el Producto", class:"btn btn-form btn-block" %>
               </div>
             <% end %>
           </div>
