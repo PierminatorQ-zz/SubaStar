@@ -28,12 +28,12 @@ class ApplicationController < ActionController::Base
           f.won
           f.save
           winner_send(f)
-          redirect_to root_path
+          
           
         else
           f.abandon
           f.save
-          redirect_to root_path
+          
         end
       end
     end 

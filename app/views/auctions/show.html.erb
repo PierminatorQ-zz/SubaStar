@@ -21,6 +21,13 @@
         
         <%= render 'timer', countdown_seconds: @countdown_seconds %>
         </div>
+        <div id="finalizada"><p>Subasta finalizada</p>
+        <% if @auction.deserted?%>
+        <p class="text-secondary3"> Estuviste a punto de ganarla</p>
+        <%else%>
+        <p class="text-secondary3"> El ganador de la subasta fuè <strong> <%= winner(@auction)%></strong></p>
+        <%end%>
+        </div>
         </div>
             <hr>
         <div class="row info-bid d-flex justify-content-between">

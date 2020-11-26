@@ -15,6 +15,7 @@
  *= require toastr
  *= require owl.carousel.min
  *= require owl.theme.default.min
+ *= require hover-min
  *= require_tree .
  *= require_self
  */

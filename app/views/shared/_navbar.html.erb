@@ -13,12 +13,12 @@
     <ul class="navbar-nav mx-auto">
 
       <li class="nav-item">
-        <%= link_to 'Inicio', root_path, class:"nav-link" %>
+        <%= link_to 'Inicio', root_path, class:"nav-link hvr-underline-from-center " %>
       </li>
       <% if user_signed_in? %>
          <li class="nav-item dropdown">
          
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle hvr-underline-from-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Mis Subastas
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -33,7 +33,7 @@
         
          <li class="nav-item dropdown">
          
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle hvr-underline-from-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Mi perfil
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -51,7 +51,7 @@
         <% if current_user.admin?%>
         <li class="nav-item dropdown">
          
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle hvr-underline-from-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dashboard
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -68,15 +68,15 @@
         <%end%>
        
         <li class="nav-item">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link hvr-underline-from-center'  %>
         </li>
        
       <% else %>
         <li class="nav-item">
-          <%= link_to "Registro", new_user_registration_path, :class => 'nav-link'  %> 
+          <%= link_to "Registro", new_user_registration_path, :class => 'nav-link hvr-underline-from-center'  %> 
         </li>
         <li class="nav-item">
-          <%= link_to "Inicio Sesiòn", new_user_session_path, :class => 'nav-link'  %>
+          <%= link_to "Inicio Sesiòn", new_user_session_path, :class => 'nav-link hvr-underline-from-center'  %>
         </li>
       <% end %>
       

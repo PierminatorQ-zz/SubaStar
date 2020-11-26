@@ -196,6 +196,7 @@
       // then we immediatelly complete the timer.
       if(timeLeft < 0 ){
         timeLeft = 0;
+        
       }
       element.data('timeLeft', timeLeft);
       this.setFinalValue(this.formatTimeLeft(timeLeft), element);
@@ -208,6 +209,7 @@
     element.find('.jst-seconds').text('00');
     element.find('.jst-minutes').text('00:');
     element.find('.jst-hours').text('00:');
+    
   };
 
   Timer.prototype.currentTime = function() {
@@ -251,6 +253,7 @@
     if(finalValues.length === 0){
       this.clearTimer(element);
       element.trigger('complete');
+      borraContador();
       return false;
     }
 
@@ -267,3 +270,4 @@
   };
 
 }));
+

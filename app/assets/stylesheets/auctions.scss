@@ -15,9 +15,6 @@ h1,h2,h3,h4,h5 {
   font-family: $raleway;
 }
 
-.timer{
-  display:flex;
-}
 
 .navbar{
   padding:10px 30px;
@@ -338,13 +335,10 @@ h1,h2,h3,h4,h5 {
   font-size: 1em;
 }
 
-/* timer._options.classNameSeconds       = classNames.seconds  || 'jst-seconds'
-      , timer._options.classNameMinutes   = classNames.minutes  || 'jst-minutes'
-      , timer._options.classNameHours     = classNames.hours    || 'jst-hours'
-      , timer._options.classNameClearDiv  = classNames.clearDiv || 'jst-clearDiv'
-      , timer._options.classNameTimeout   = classNames.timeout || 'jst-timeout'; */
+
 
 .timer{
+  display:flex;
   padding: 20px;
    font-size:2em;
    font-family: $open;
@@ -610,9 +604,32 @@ h1,h2,h3,h4,h5 {
 .header-scrolled {
   top: 0 !important;
   padding: 15px;
-}
+  }
 
 .topbar-scrolled {
   top: -30px !important;
   color:red;
+  }
+
+#finalizada{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size:2em;
+    font-family: $raleway;
+    color: $pink;
+    font-weight: 900;
+    border: 1px solid $pink;
+    border-radius: 0.5em;
+    background-color: $grayLight;
+    box-shadow: $shadowBox;
+    p{
+      margin:0;
+    }
+    .text-secondary3{
+      font-size:0.5em !important;
+      font-weight:300;
+    }
 }

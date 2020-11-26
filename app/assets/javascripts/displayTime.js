@@ -1,11 +1,15 @@
 
 document.addEventListener('turbolinks:load', function(){ 
-  $('.timer').startTimer();
+    
+    $('#finalizada').hide()
+    //countdown
+    $('.timer').startTimer();
+    
 
-
+    //clean search
   $('#search').val('')
 
-
+    //carousel related
   $('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
@@ -15,7 +19,7 @@ document.addEventListener('turbolinks:load', function(){
     autoplayTimeout:3500,
     autoplayHoverPause:true,
     dots:false,
-    navText:["<div class='nav-btn prev-slide'><i class='lni lni-32 lni-chevron-left-circle'></i></div>","<div class='nav-btn next-slide'><i class='lni lni-32 lni-chevron-right-circle'></i></div>"],
+    navText:["<div class='nav-btn prev-slide'><i class='lni lni-chevron-left'></i></div>","<div class='nav-btn next-slide'><i class='lni lni-chevron-right'></i></div>"],
     responsive:{
         0:{
             items:1
@@ -29,7 +33,7 @@ document.addEventListener('turbolinks:load', function(){
     }
 })
  
-
+    //topbar hide
 $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
     $('#header').addClass('header-scrolled');
@@ -40,12 +44,20 @@ $(window).scroll(function() {
     }
 });
 
-/* if ($(window).scrollTop() > 100) {
+ if ($(window).scrollTop() > 100) {
     $('#header').addClass('header-scrolled');
     $('#topbar').addClass('topbar-scrolled');
-} */
+} 
     
 
 
 });
+
+function borraContador(){
+    $('.timer').hide();
+    $('#finalizada').delay(2000).show();
+    toastr["success"]("la subasta ha terminado, recibiràs un email si has sido el ganador.", "Subasta finalizada")
+    console.log("nada")
+    
+}
 
