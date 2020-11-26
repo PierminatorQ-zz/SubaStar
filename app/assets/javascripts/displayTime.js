@@ -53,11 +53,12 @@ $(window).scroll(function() {
 
 });
 
+
 function borraContador(){
+
     $('.timer').hide();
     $('#finalizada').delay(2000).show();
     toastr["success"]("la subasta ha terminado, recibiràs un email si has sido el ganador.", "Subasta finalizada")
-    console.log("nada")
+    
     
 }
-

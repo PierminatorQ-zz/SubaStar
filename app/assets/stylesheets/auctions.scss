@@ -593,7 +593,6 @@ h1,h2,h3,h4,h5 {
   
   transition: all 0.5s;
   z-index: 997;
-  padding: 25px 0;
   top: 30px;
   
 
@@ -603,7 +602,7 @@ h1,h2,h3,h4,h5 {
 
 .header-scrolled {
   top: 0 !important;
-  padding: 15px;
+  
   }
 
 .topbar-scrolled {
@@ -632,4 +631,16 @@ h1,h2,h3,h4,h5 {
       font-size:0.5em !important;
       font-weight:300;
     }
+}
+
+.toast-error{
+  background-color: $pink !important;
+}
+
+.toast-success{
+  background-color: $cyan !important;
+}
+
+.toast-info{
+  background-color: $electric !important;
 }
