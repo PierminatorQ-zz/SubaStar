@@ -20,13 +20,14 @@ class ApplicationController < ActionController::Base
     @auctions=Auction.all
     
     @auctions.each do |f|
-      last_bid=Bid.where(auction_id: f.id).last
+      @last_bid=Bid.where(auction_id: f.id).last
       if f.end_date < DateTime.now.in_time_zone && f.active?
 
         if last_bid.present?
           f.winner_id = last_bid.user_id
           f.won
           f.save
+          create_item(f)
           winner_send(f)
           
           
@@ -39,16 +40,25 @@ class ApplicationController < ActionController::Base
     end 
   end
 
-def winner_send(auction)          
-    user= User.find(auction.winner_id)
-    WinnerMailer.winner_send(user, auction.title).deliver_now
-end
+  def add_item(auction)
+      price=@last_bid
+      product = Product.find(auction.product_id)
+      if product
+      OrderAuction.create(auction_id:auction.id, product_id: product, price: price)
+      end
+      
+  end
+
+  def winner_send(auction)          
+      user= User.find(auction.winner_id)
+      WinnerMailer.winner_send(user, auction.title).deliver_now
+  end
+    
+  def set_title
+    @page_title= 'SubastArt | Compra arte desde tu casa'
+  end
   
-def set_title
-  @page_title= 'SubastArt | Compra arte desde tu casa'
-end
-  
-  
+
 
 
   
