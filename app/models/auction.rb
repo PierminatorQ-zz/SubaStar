@@ -2,7 +2,8 @@ class Auction < ApplicationRecord
   belongs_to :user
   belongs_to :product
   has_many :bids, dependent: :destroy
-
+  validates :product_id, presence: true
+  validates :initial_price, presence: true
   #votable feature
   acts_as_votable
   

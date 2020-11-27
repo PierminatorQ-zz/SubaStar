@@ -64,7 +64,9 @@
                         </div>
                         <div class="btn-group float-right my-3" role="group">
                         <%= link_to 'Show', auction, class:"btn btn-outline-secondary btn-grupo", type:"button" %>
+                        <%if auction.active? || auction.inactive? %>
                         <%= link_to 'Edit', edit_auction_path(auction), class:"btn btn-outline-secondary btn-grupo", type:"button" %>
+                        <%end%>
                         <%= link_to 'Destroy', auction, method: :delete, class:"btn btn-outline-secondary btn-grupo", type:"button", data: { confirm: 'Are you sure?' } %>
                         
                       </div>

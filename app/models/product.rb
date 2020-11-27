@@ -3,4 +3,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :auctions, dependent: :destroy
   has_one_attached :image
+  validates :title, presence: true
+  validates :image, presence: true
+  validates :category_id, presence: true
 end
