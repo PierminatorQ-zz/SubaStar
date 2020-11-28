@@ -1,0 +1,22 @@
+<div class="container mt-5">
+
+
+
+  <h5> Ordern no.<%=@order.number%> </h5>
+  <h5> Total:<%=@order.total%> </h5>
+  <ul class="mt-5">
+  <% @orders.each  do |item|%>
+  <li> subasta:<%=item.auction.title%> </li>
+  <li> precio:<%=item.price%> </li>
+  <li> Producto ganado:<%=get_product(item).title%> </li>
+  <li> Usuario:<%=item.order.user_id%> </li>
+
+     <%= form_for :cart, url: destroy_path, method: :delete do |f| %>
+                      <%= f.hidden_field :item, value: item.id %>
+                      <%= f.submit "delete to cart" %>
+                    <% end %>
+
+  <%end%>
+
+  </ul>
+</div>

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :bids
 
+  #resource :cart, only: [:destroy]
+  get 'carrito', to:'cart#show'
+  delete 'destroy', to: 'cart#destroy'
+  
   resources :auctions do
     member do
       put "like" => "auctions#upvote"

@@ -23,11 +23,11 @@ class ApplicationController < ActionController::Base
       @last_bid=Bid.where(auction_id: f.id).last
       if f.end_date < DateTime.now.in_time_zone && f.active?
 
-        if last_bid.present?
-          f.winner_id = last_bid.user_id
+        if @last_bid.present?
+          f.winner_id = @last_bid.user_id
           f.won
           f.save
-          create_item(f)
+          add_to_cart(f)
           winner_send(f)
           
           
@@ -40,14 +40,7 @@ class ApplicationController < ActionController::Base
     end 
   end
 
-  def add_item(auction)
-      price=@last_bid
-      product = Product.find(auction.product_id)
-      if product
-      OrderAuction.create(auction_id:auction.id, product_id: product, price: price)
-      end
-      
-  end
+  
 
   def winner_send(auction)          
       user= User.find(auction.winner_id)
@@ -58,7 +51,21 @@ class ApplicationController < ActionController::Base
     @page_title= 'SubastArt | Compra arte desde tu casa'
   end
   
+  def current_order
+      if current_user
+        order = Order.find_or_create_by(user_id:current_user.id)
+      end
+      order
+  end
 
+  def add_to_cart(auction)
+    current_order.add_item(auction, current_order.id)
+    redirect_to root_path
+  end
+
+  
+  
+  
 
 
   
