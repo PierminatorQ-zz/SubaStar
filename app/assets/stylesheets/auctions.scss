@@ -269,6 +269,7 @@ h1,h2,h3,h4,h5 {
   background-color: $electric;
   border-radius: 1em;
   color:white;
+  font-size:0.9em;
 }
 
 
@@ -766,4 +767,35 @@ h1,h2,h3,h4,h5 {
     font-weight: 900;
     font-size:1.5em;
     color:white;
+  }
+
+  .card-cart{
+    
+  border-radius: 10px;
+  box-shadow: $shadowBox;
+  margin: 20px 20px 20px 0;
+  border: 1px solid $grayLight;
+    
+    &:hover{
+      border:1px solid $cyan;
+    }
+
+    .title-cart{
+      font-size:2em;
+      font-weight: 900;
+      color:$blackText;
+    }
+
+    .text-secondary{
+      font-size:0.9em;
+      font-family: $open;
+      
+    }
+    .price-cart{
+      font-size:1.5em;
+      font-weight: 900;
+      color:$electric !important;
+      font-family: $open;
+      
+    }
   }
