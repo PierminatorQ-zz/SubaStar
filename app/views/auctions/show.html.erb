@@ -45,7 +45,7 @@
         </p>
           <div id="biddes" class="biddes-class text-center">
             <% if @bid.nil?%>
-              <h2>$<%=@auction.initial_price%></h2>
+              <h2><%=  number_to_currency(@auction.initial_price, :precision => 0, :delimiter => ".")   %></h2>
             <% else%>
               <%= render @bid %>
             <% end%>

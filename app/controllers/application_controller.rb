@@ -60,7 +60,7 @@ class ApplicationController < ActionController::Base
 
   def add_to_cart(auction)
     current_order.add_item(auction, current_order.id)
-    redirect_to root_path
+    
   end
 
   

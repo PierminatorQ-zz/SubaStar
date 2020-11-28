@@ -65,7 +65,7 @@ $(document).scroll(function (e) {
     $(".scrollBar").css("height", scrollPercent + "%");
     
     
-    console.log($(window).scrollTop())
+
 
     scrollCalc(46,".dos");
     scrollCalc(159,".tres");
@@ -84,9 +84,9 @@ $(document).scroll(function (e) {
 function borraContador(){
 
     $('.timer').hide();
-    $('#finalizada').delay(2000).show();
+    $('#finalizada').delay(1000).show();
     toastr["success"]("la subasta ha terminado, recibiràs un email si has sido el ganador.", "Subasta finalizada")
-    
+    return
     
 }
 

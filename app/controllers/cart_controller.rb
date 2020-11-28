@@ -4,10 +4,11 @@ class CartController < ApplicationController
 
   def destroy
     @order=current_order
-    item= OrderAuction.find(params['cart']['item'])
-    item.destroy
+    @item= OrderAuction.find(params['cart']['item'])
+    @item.destroy
     
     respond_to do |format|
+      
       format.html { redirect_to carrito_path, notice: 'item was successfully destroyed.' }
       format.json { head :no_content }
     end
@@ -21,9 +22,11 @@ class CartController < ApplicationController
 
   def update_total
     sum = 0
-    @orders.each do |item|
-      sum += item.price
+    if !@orders.nil?
+      @orders.each do |item|
+        sum += item.price
+      end
+      current_order.update_attribute(:total, sum)
     end
-    current_order.update_attribute(:total, sum)
   end
 end
