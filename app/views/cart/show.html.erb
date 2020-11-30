@@ -1,7 +1,7 @@
 <div class="container mt-5">
 
 
-  <% if @orders.count >0 %>
+  <% if @order.unpaid? && @orders.count >0 %>
     <h5> Ordern no.<%=@order.number%> </h5>
     <h5> Total:<%=@order.total%> </h5>
     <% @orders.each  do |item|%>
@@ -35,4 +35,11 @@
     <h5 class="mt-5" >no tienes ningun producto en el carrito</h5>
   <%end%>
 
+</div>
+
+<div class="row ml-auto">
+<script
+  src="https://www.mercadopago.cl/integrations/v1/web-payment-checkout.js"
+  data-preference-id="<%= @preference_id %>">
+</script>
 </div>

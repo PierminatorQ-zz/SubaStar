@@ -34,7 +34,7 @@ gem 'toastr-rails'
 gem 'chartkick'
 gem 'omniauth-google-oauth2'
 gem 'activerecord-session_store'
-
+gem 'mercadopago-sdk', '~> 1.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -18,7 +18,40 @@ class CartController < ApplicationController
     @order=current_order
     @orders = current_order.order_auctions.all
     
+
+    require 'mercadopago.rb'
+
+    $mp = MercadoPago.new('TEST-1447323506024809-070320-02255dc1854d844b7bf141e8886150d3__LD_LB__-198085952')
+
+    # Crea un objeto de preferencia
+      preference_data = {
+        "items": [
+          {
+            "title": "Producto Subastas Subastar",
+            "unit_price": @order.total,
+            "quantity": 1,
+            "currency": "CLP"
+          }
+        ],
+        "back_urls": {
+            success: "https://www.localhost:3000",
+            failure: "http://www.tu-sitio/failure",
+            pending: "http://www.tu-sitio/pendings"
+        },
+          "auto-return": "approved"
+
+      }
+
+      preference = $mp.create_preference(preference_data)
+
+      # Este valor reemplazará el string "<%= @preference_id %>" en tu HTML
+      @preference_id = preference["response"]["id"]
+      
+      
+
   end
+
+
 
   def update_total
     sum = 0
