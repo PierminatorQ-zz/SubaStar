@@ -99,6 +99,7 @@
         clearInterval(timerBoxElement.intervalId);
       });
 
+      
       timerBoxElement.on('complete', function() {
         timerBoxElement.onComplete(timerBoxElement);
       });
@@ -111,6 +112,10 @@
         if(options && options.loop === true) {
           timer.resetTimer(timerBoxElement, options, cssClassSnapshot);
         }
+      });
+
+      timerBoxElement.on('complete', function() {
+        window.location= "/"
       });
 
       timerBoxElement.on('pause', function() {
@@ -253,7 +258,7 @@
     if(finalValues.length === 0){
       this.clearTimer(element);
       element.trigger('complete');
-      borraContador();
+      
       return false;
     }
 

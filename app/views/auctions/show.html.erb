@@ -19,13 +19,16 @@
         <h3 class="finaliza"> Esta Subasta finaliza el <strong><%=l(@auction.end_date, :format => '%d %B %Y')%></strong></h3>
         <div class="contador d-flex justify-content-center my-5">
         
-        <%= render 'timer', countdown_seconds: @countdown_seconds %>
-        </div>
-        <div id="finalizada"><p>Subasta finalizada</p>
-        <% if @auction.deserted?%>
-        <p class="text-secondary3"> Estuviste a punto de ganarla</p>
+        <% if !@auction.winner_id.present?%>
+          <%= render 'timer', countdown_seconds: @countdown_seconds %>
         <%else%>
-        <p class="text-secondary3"> El ganador de la subasta fuè <strong> <%= winner(@auction)%></strong></p>
+          <div id="finalizada"><p>Subasta finalizada</p>
+            <% if @auction.deserted?%>
+            <p class="text-secondary3"> Estuviste a punto de ganarla</p>
+            <%else%>
+            <p class="text-secondary3"> El ganador de la subasta fuè <strong> <%= winner(@auction)%></strong></p>
+            <%end%>
+          </div>
         <%end%>
         </div>
         </div>

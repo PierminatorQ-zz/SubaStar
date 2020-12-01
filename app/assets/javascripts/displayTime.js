@@ -1,7 +1,7 @@
 
 document.addEventListener('turbolinks:load', function(){ 
     
-    $('#finalizada').hide()
+    //$('#finalizada').hide()
     //countdown
     $('.timer').startTimer();
     
@@ -81,15 +81,7 @@ $(document).scroll(function (e) {
 });
 
 
-function borraContador(){
 
-    $('.timer').hide();
-    $('#finalizada').show();
-    toastr.success(data.message, 'la subasta ha terminado, recibiràs un email si has sido el ganador.", "Subasta finalizada');
-    
-    return
-    
-}
 
 
 function scrollCalc(scroll,clase){

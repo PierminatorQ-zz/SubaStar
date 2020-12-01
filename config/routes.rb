@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   #resource :cart, only: [:destroy]
   get 'carrito', to:'cart#show'
+  get 'success', to:'cart#pay_success'
   delete 'destroy', to: 'cart#destroy'
   
   resources :auctions do
