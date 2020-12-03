@@ -4,15 +4,19 @@
 <p align="center"><img width=40% src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/250X83_COLOR.png"></p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div align="center">
+
 ![Ruby](https://img.shields.io/badge/Ruby-2.6.0-red)
 ![Rails](https://img.shields.io/badge/Rails-5.2.4-blue)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+</div>
+
 ## Basic Overview
 
 Using stock historical data, train a supervised learning algorithm with any combination of financial indicators. Rapidly backtest your model for accuracy and simulate investment portfolio performance. 
-<p align="center"><img width=95% src="https://github.com/anfederico/Waldo/blob/master/media/Schematic.png"></p>
+<p align="center"><img width=95% src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/screen.png"></p>
 
 <br>
 
