@@ -4,8 +4,14 @@ class CartController < ApplicationController
 
 
   def pay_success
-    fdsdfsdf
-    params[:status]
+    @order=current_order
+    if params[:status] == "approved"
+      @order.payed!
+      redirect_to root_path, notice: 'el pago  fue procesado correctamente.' 
+    else
+      redirect_to carrito_path, notice: 'el pago no fue procesado correctamente.' 
+    end
+   
   end
 
   def destroy

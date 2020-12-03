@@ -31,15 +31,14 @@
     
     <%end%>
   
-  <%else%>
-    <h5 class="mt-5" >no tienes ningun producto en el carrito</h5>
-  <%end%>
-
-</div>
-
 <div class="row ml-auto">
 <script
   src="https://www.mercadopago.cl/integrations/v1/web-payment-checkout.js"
   data-preference-id="<%= @preference_id %>">
 </script>
+</div>
+  <%else%>
+    <h5 class="mt-5" >no tienes ningun producto en el carrito</h5>
+  <%end%>
+
 </div>

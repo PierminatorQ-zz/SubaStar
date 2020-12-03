@@ -2,9 +2,16 @@
 
   <%= form_with(model: auction, local: true) do |form| %>
      
+     <div class="row">
+
+     <div class="form-group col-sm-6">
+        <%= form.label "Producto" %>
+        <%= form.collection_select :product_id, @products, :id, :title,{prompt: "Selecciona un producto"},{ class:"form-control picker"} %>
+        
+      </div>
+      </div>
       
     <div class="row">
-    
 
       <div class="form-group col-sm-6">
         <%= form.label "Titulo" %>
@@ -36,14 +43,7 @@
     </div>
 
     <div class="row">
-      
-      
-      <div class="form-group col-sm-6">
-        <%= form.label "Producto" %>
-        <%= form.collection_select :product_id, @products, :id, :title,{prompt: "Selecciona un producto"},{ class:"form-control picker"} %>
-        
-      </div>
-      
+            
       <div class="actions col-sm-6 text-center my-auto">
         <%= form.submit "Crear Subasta", class:"btn btn-form btn-block "%>
       </div>

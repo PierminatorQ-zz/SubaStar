@@ -51,12 +51,21 @@ class ApplicationController < ActionController::Base
     @page_title= 'SubastArt | Compra arte desde tu casa'
   end
   
+  
+
   def current_order
-      if current_user
-        order = Order.find_or_create_by(user_id:current_user.id)
+    if current_user
+      order = Order.where(user_id: current_user.id).where(status: "unpaid").last
+        
+        if order.nil?
+          order = Order.create(user_id: current_user.id, status: "unpaid")
+        end
       end
-      order
+      return order
+      
   end
+
+
 
   def add_to_cart(auction)
     current_order.add_item(auction, current_order.id)
