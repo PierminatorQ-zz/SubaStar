@@ -39,7 +39,7 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
       Funcionalidades
     </a>
     <span> | </span>
-    <a href="https://twitter.com/BearStoneHA">
+    <a href="https://github.com/PierminatorQ/SubaStar#mapa">
       Mapa del Sitio
     </a>
     <span> | </span>
@@ -65,8 +65,6 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 
 <br>
 
-  - Import a HTML file and watch it magically convert to Markdown
-  - Drag and drop images (requires your Dropbox account be linked)
 
   - Devise: autenticacion y registro de usuarios nuevos
   - Redis: servidor para funcionalidad de pujas en tiempo real atravès de ActionCable
@@ -81,9 +79,10 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 
 #### LIBRERIAS
 <br>
-- iconos :lineicons.com
-- owl-carousel:funcionalidad de subastas destacadas desplegadas en forma de carrusel.
--hover.css:animaciones de botones e links en navbar.
+
+  - iconos :lineicons.com
+  - owl-carousel:funcionalidad de subastas destacadas desplegadas en forma de carrusel.
+  - hover.css:animaciones de botones e links en navbar.
 
 
 <br>
@@ -92,10 +91,17 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 
 ## FUNCIONALIDADES <a name="funcion" href="https://github.com/PierminatorQ/SubaStar#funcion"> </a>
 <br>
--pujas en Tiempo real
--Categories de productos
--Imágenes en productos 
--Autenticación con google
--Buscador de subastas en Index
--Envío de emails a ganadores
--Carrito de compras
+  - pujas en Tiempo real
+  - Categories de productos
+  - Imágenes en productos 
+  - Autenticación con google
+  - Buscador de subastas en Index
+  - Envío de emails a ganadores
+  - Carrito de compras
+
+<br>
+<br>
+<br>
+
+## MAPA DEL SITIO <a name="funcion" href="https://github.com/PierminatorQ/SubaStar#mapa"> <img border="0" src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/mapa.png"></a>
+<br>
