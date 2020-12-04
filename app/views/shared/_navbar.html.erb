@@ -73,6 +73,12 @@
         <li class="nav-item">
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link hvr-underline-from-center'  %>
         </li>
+
+        <li class="nav-item">
+          <%= link_to carrito_path, :class => 'nav-link hvr-underline-from-center' do %>
+            <i class="lni lni-lg lni-cart"></i>
+          <%end%>
+        </li>
        
       <% else %>
         <li class="nav-item">
@@ -102,13 +108,7 @@
         </div>  
       <% end %>
     <%else%>
-     <!--
-     <div class="container">
-      <% if signed_in?%>
-        <span class="text-secondary float-right email">Bienvenido <strong><%= current_user.email %></strong></span>
-      <%end%>
-    </div>
-     -->
+     
     <%end%>
     
   </div>
