@@ -27,10 +27,6 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
       Diagrama
     </a>
     <span> | </span>
-    <a href="https://www.vcloudinfo.com/click-here">
-      Colores y Tipografia
-    </a>
-    <span> | </span>
     <a href="https://github.com/PierminatorQ/SubaStar#gemas">
       Gemas
     </a>
@@ -45,6 +41,10 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
     <span> | </span>
     <a href="https://github.com/PierminatorQ/SubaStar#historias">
       Historias
+    </a>
+    <span> | </span>
+    <a href="https://github.com/PierminatorQ/SubaStar#instalacion">
+      Instalaciòn
     </a>
     
   </h4>
@@ -110,4 +110,32 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 <br>
 
 ## HISTORIAS <a name="historias" href="https://docs.google.com/document/d/1OolPagsF3NSGn9wPgWXN_Uw3KW1yJwYYU_m0b63iBLw/edit?usp=sharing"> Link</a>
+
+<br>
+<br>
+<br>
+
+## INSTALACION <a name="instalaciòn" href="https://docs.google.com/document/d/1OolPagsF3NSGn9wPgWXN_Uw3KW1yJwYYU_m0b63iBLw/edit?usp=sharing"></a>
+<br>
+* en Consola 
+```
+git clone git@github.com:PierminatorQ/SubaStar.git
+```
+* input: 
+```
+cd Subastar
+```
+* Input: 
+```
+bundle install
+```
+* input: 
+```
+rails db:migrate
+```
+* input: 
+```
+rails s 
+```
+* this will start the server on localhost:3000
 
