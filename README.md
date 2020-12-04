@@ -43,8 +43,8 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
       Mapa del Sitio
     </a>
     <span> | </span>
-    <a href="https://www.vcloudinfo.com/click-here">
-      F
+    <a href="https://github.com/PierminatorQ/SubaStar#historias">
+      Historias
     </a>
     
   </h4>
@@ -104,4 +104,10 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 <br>
 
 ## MAPA DEL SITIO <a name="funcion" href="https://github.com/PierminatorQ/SubaStar#mapa"> <img border="0" src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/mapa.png"></a>
+
 <br>
+<br>
+<br>
+
+## HISTORIAS <a name="historias" href="https://docs.google.com/document/d/1OolPagsF3NSGn9wPgWXN_Uw3KW1yJwYYU_m0b63iBLw/edit?usp=sharing"></a>
+
