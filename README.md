@@ -64,15 +64,19 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 ## GEMAS <a name="gemas" href="https://github.com/PierminatorQ/SubaStar#gemas"> </a>
 
 <br>
-- Devise: autenticacion y registro de usuarios nuevos
-- Redis: servidor para funcionalidad de pujas en tiempo real atravès de ActionCable
-- aasm: Maquinas de estaados para modelos de Auction y Order.
-- Minimagick: Imagenes adjuntas para cada producto.
-- Act as votable: funcionalidad de me gusta a las subastas.
-- Chartkick, highcharts: graficos implementados en Dashboard de Admin User
-- toastr-rails: mejorar apariencia de alertas en Rails.
-- oauth:funcionalidad de autenticacion a travès de google.
-- Letter_opener:Funcionalidad para mostrar los emails enviados por el sistema en el navegador.
+
+  - Import a HTML file and watch it magically convert to Markdown
+  - Drag and drop images (requires your Dropbox account be linked)
+
+  - Devise: autenticacion y registro de usuarios nuevos
+  - Redis: servidor para funcionalidad de pujas en tiempo real atravès de ActionCable
+  - aasm: Maquinas de estaados para modelos de Auction y Order.
+  - Minimagick: Imagenes adjuntas para cada producto.
+  - Act as votable: funcionalidad de me gusta a las subastas.
+  - Chartkick, highcharts: graficos implementados en Dashboard de Admin User
+  - toastr-rails: mejorar apariencia de alertas en Rails.
+  - oauth:funcionalidad de autenticacion a travès de google.
+  - Letter_opener:Funcionalidad para mostrar los emails enviados por el sistema en el navegador.
 
 
 #### LIBRERIAS
