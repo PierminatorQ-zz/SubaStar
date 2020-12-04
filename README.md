@@ -117,25 +117,34 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 
 ## INSTALACION <a name="instalaciòn" href="https://docs.google.com/document/d/1OolPagsF3NSGn9wPgWXN_Uw3KW1yJwYYU_m0b63iBLw/edit?usp=sharing"></a>
 <br>
-* en Consola 
+  * en Consola 
+
 ```
 git clone git@github.com:PierminatorQ/SubaStar.git
 ```
-* input: 
+
+  * input: 
+
 ```
 cd Subastar
 ```
-* Input: 
+
+  * Input: 
+
 ```
 bundle install
 ```
-* input: 
+
+  * input: 
+
 ```
 rails db:migrate
 ```
-* input: 
+  * input: 
+
 ```
 rails s 
 ```
-* this will start the server on localhost:3000
+
+  * this will start the server on localhost:3000
 
