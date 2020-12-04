@@ -148,3 +148,10 @@ rails s
 
   * this will start the server on localhost:3000
 
+## Status
+  Pendiente Deploy: Pendiente realizar el deploy en Heroku.
+
+
+## Contact
+  Creado por [Pierre Quintero](https://www.linkedin.com/in/pierre-quintero/) 
+ 
