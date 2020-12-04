@@ -54,14 +54,16 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 <br>
 <br>
 <br>
-#### Diagrama <a name="diagrama" href="https://github.com/PierminatorQ/SubaStar#diagrama"><img border="0" src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/diagram.png"> </a>
+
+## DiAGRAMA <a name="diagrama" href="https://github.com/PierminatorQ/SubaStar#diagrama"><img border="0" src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/diagram.png"> </a>
 
 <br>
 <br>
 <br>
-#### GEMAS <a name="gemas" href="https://github.com/PierminatorQ/SubaStar#gemas"> </a>
 
+## GEMAS <a name="gemas" href="https://github.com/PierminatorQ/SubaStar#gemas"> </a>
 
+<br>
 - Devise: autenticacion y registro de usuarios nuevos
 - Redis: servidor para funcionalidad de pujas en tiempo real atravès de ActionCable
 - aasm: Maquinas de estaados para modelos de Auction y Order.
@@ -74,6 +76,7 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 
 
 #### LIBRERIAS
+<br>
 - iconos :lineicons.com
 - owl-carousel:funcionalidad de subastas destacadas desplegadas en forma de carrusel.
 -hover.css:animaciones de botones e links en navbar.
