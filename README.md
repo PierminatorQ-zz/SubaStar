@@ -20,6 +20,7 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 
 <br>
 
+
 <div align="center"><a name="menu"></a>
   <h4>
     <a href="https://www.vCloudInfo.com/tag/iot">
@@ -48,4 +49,4 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
     
   </h4>
 </div>
-
+<p align="center"><img width=70% src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/show_capture.jpg"></p>
