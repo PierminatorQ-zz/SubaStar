@@ -84,14 +84,14 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
   - owl-carousel:funcionalidad de subastas destacadas desplegadas en forma de carrusel.
   - hover.css:animaciones de botones e links en navbar.
 
-
 <br>
 <br>
 <br>
 
 ## FUNCIONALIDADES <a name="funcion" href="https://github.com/PierminatorQ/SubaStar#funcion"> </a>
 <br>
-  - pujas en Tiempo real
+
+  - Pujas en Tiempo real
   - Categories de productos
   - Imágenes en productos 
   - Autenticación con google
