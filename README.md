@@ -109,5 +109,5 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 <br>
 <br>
 
-## HISTORIAS <a name="historias" href="https://docs.google.com/document/d/1OolPagsF3NSGn9wPgWXN_Uw3KW1yJwYYU_m0b63iBLw/edit?usp=sharing"></a>
+## HISTORIAS <a name="historias" href="https://docs.google.com/document/d/1OolPagsF3NSGn9wPgWXN_Uw3KW1yJwYYU_m0b63iBLw/edit?usp=sharing"> Link</a>
 
