@@ -115,7 +115,7 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 <br>
 <br>
 
-## INSTALACION <a name="instalaciòn" href="https://docs.google.com/document/d/1OolPagsF3NSGn9wPgWXN_Uw3KW1yJwYYU_m0b63iBLw/edit?usp=sharing"></a>
+## INSTALACION <a name="instalacion" href="https://github.com/PierminatorQ/SubaStar#instalacion"></a>
 <br>
   * en Consola 
 
