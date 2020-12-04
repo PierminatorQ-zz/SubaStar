@@ -23,7 +23,7 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 
 <div align="center"><a name="menu"></a>
   <h4>
-    <a href="https://www.vCloudInfo.com/tag/iot">
+    <a href="https://github.com/PierminatorQ/SubaStar#diagrama">
       Diagrama
     </a>
     <span> | </span>
@@ -50,3 +50,6 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
   </h4>
 </div>
 <p align="center"><img width=70% src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/show_capture.jpg"></p>
+
+
+#### Diagrama <a name="diagrama" href="https://github.com/PierminatorQ/SubaStar#diagrama"><img border="0" src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/diagram.png"> </a>
