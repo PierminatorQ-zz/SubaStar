@@ -31,11 +31,11 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
       Colores y Tipografia
     </a>
     <span> | </span>
-    <a href="https://github.com/CCOSTAN/Home-AssistantConfig#gemas">
+    <a href="https://github.com/PierminatorQ/SubaStar#gemas">
       Gemas
     </a>
     <span> | </span>
-    <a href="https://github.com/CCOSTAN/Home-AssistantConfig#funcion">
+    <a href="https://github.com/PierminatorQ/SubaStar#funcion">
       Funcionalidades
     </a>
     <span> | </span>
