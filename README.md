@@ -31,7 +31,7 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
       Colores y Tipografia
     </a>
     <span> | </span>
-    <a href="https://github.com/CCOSTAN/Home-AssistantConfig#devices">
+    <a href="https://github.com/CCOSTAN/Home-AssistantConfig#gemas">
       Gemas
     </a>
     <span> | </span>
@@ -40,7 +40,7 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
     </a>
     <span> | </span>
     <a href="https://twitter.com/BearStoneHA">
-      Workflow
+      Mapa del Sitio
     </a>
     <span> | </span>
     <a href="https://www.vcloudinfo.com/click-here">
@@ -51,5 +51,29 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 </div>
 <p align="center"><img width=70% src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/show_capture.jpg"></p>
 
-
+<br>
+<br>
+<br>
 #### Diagrama <a name="diagrama" href="https://github.com/PierminatorQ/SubaStar#diagrama"><img border="0" src="https://github.com/PierminatorQ/SubaStar/blob/master/app/assets/images/diagram.png"> </a>
+
+<br>
+<br>
+<br>
+#### GEMAS <a name="gemas" href="https://github.com/PierminatorQ/SubaStar#gemas"> </a>
+
+
+- Devise: autenticacion y registro de usuarios nuevos
+- Redis: servidor para funcionalidad de pujas en tiempo real atravès de ActionCable
+- aasm: Maquinas de estaados para modelos de Auction y Order.
+- Minimagick: Imagenes adjuntas para cada producto.
+- Act as votable: funcionalidad de me gusta a las subastas.
+- Chartkick, highcharts: graficos implementados en Dashboard de Admin User
+- toastr-rails: mejorar apariencia de alertas en Rails.
+- oauth:funcionalidad de autenticacion a travès de google.
+- Letter_opener:Funcionalidad para mostrar los emails enviados por el sistema en el navegador.
+
+
+#### LIBRERIAS
+- iconos :lineicons.com
+- owl-carousel:funcionalidad de subastas destacadas desplegadas en forma de carrusel.
+-hover.css:animaciones de botones e links en navbar.
