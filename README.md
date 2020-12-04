@@ -35,7 +35,7 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
       Gemas
     </a>
     <span> | </span>
-    <a href="https://github.com/CCOSTAN/Home-AssistantConfig/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">
+    <a href="https://github.com/CCOSTAN/Home-AssistantConfig#funcion">
       Funcionalidades
     </a>
     <span> | </span>
@@ -80,3 +80,18 @@ Aplicacion creada como Proyecto final para la Carrera de Full Stack RoR en Desaf
 - iconos :lineicons.com
 - owl-carousel:funcionalidad de subastas destacadas desplegadas en forma de carrusel.
 -hover.css:animaciones de botones e links en navbar.
+
+
+<br>
+<br>
+<br>
+
+## FUNCIONALIDADES <a name="funcion" href="https://github.com/PierminatorQ/SubaStar#funcion"> </a>
+<br>
+-pujas en Tiempo real
+-Categories de productos
+-Imágenes en productos 
+-Autenticación con google
+-Buscador de subastas en Index
+-Envío de emails a ganadores
+-Carrito de compras
